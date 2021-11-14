@@ -1,6 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { NavController } from '@ionic/angular';
+import { Router } from '@angular/router';
+import { MenuController, NavController } from '@ionic/angular';
+import { map, switchMap, take, tap } from 'rxjs/operators';
+import { AuthService } from 'src/app/core/services/auth.service';
+import { UserService } from 'src/app/core/services/user.service';
 
 @Component({
   selector: 'app-login',
@@ -8,19 +12,31 @@ import { NavController } from '@ionic/angular';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage {
-  loginForm: FormGroup;
+  loginForm = new FormGroup({
+    email: new FormControl(null, {
+      updateOn: 'change',
+      validators: [Validators.required, Validators.email],
+    }),
+    password: new FormControl(null, {
+      updateOn: 'change',
+      validators: [Validators.required, Validators.minLength(6)],
+    }),
+  });
 
-  constructor(private navCtrl: NavController) {
-    this.loginForm = new FormGroup({
-      email: new FormControl(null, {
-        updateOn: 'change',
-        validators: [Validators.required, Validators.email],
-      }),
-      password: new FormControl(null, {
-        updateOn: 'change',
-        validators: [Validators.required, Validators.minLength(6)],
-      }),
-    });
+  constructor(
+    private navCtrl: NavController,
+    private authService: AuthService,
+    private router: Router,
+    private userService: UserService,
+    private menuCtrl: MenuController
+  ) {}
+
+  ionViewWillEnter() {
+    this.menuCtrl.enable(false);
+  }
+
+  ionViewDidLeave() {
+    this.menuCtrl.enable(true);
   }
 
   switchToSignUp() {
@@ -29,9 +45,23 @@ export class LoginPage {
 
   loginWithEmailAndPassword() {
     if (this.loginForm.valid) {
-      console.log(this.loginForm.value.email, this.loginForm.value.password);
-
-      this.loginForm.reset();
+      this.authService
+        .loginWithEmailAndPassword(
+          this.loginForm.value.email,
+          this.loginForm.value.password
+        )
+        .pipe(
+          take(1),
+          switchMap((resData) =>
+            this.userService.fetchUserByIdFromFirevase(resData.id)
+          )
+        )
+        .subscribe((user) => {
+          this.userService.storeUserData(user).then(() => {
+            this.loginForm.reset();
+            this.router.navigateByUrl('/home');
+          });
+        });
     }
   }
 }

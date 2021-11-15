@@ -8,8 +8,14 @@ import {
   Validators,
 } from '@angular/forms';
 import { Router } from '@angular/router';
-import { MenuController, NavController } from '@ionic/angular';
+import {
+  AlertController,
+  LoadingController,
+  MenuController,
+  NavController,
+} from '@ionic/angular';
 import { take } from 'rxjs/operators';
+import { Alert } from 'selenium-webdriver';
 import { AuthService } from 'src/app/core/services/auth/auth.service';
 import { UserService } from 'src/app/core/services/auth/user.service';
 
@@ -27,7 +33,9 @@ export class SignupPage {
     private authService: AuthService,
     private userService: UserService,
     private router: Router,
-    private menuCtrl: MenuController
+    private menuCtrl: MenuController,
+    private loadingCtrl: LoadingController,
+    private alertCtrl: AlertController
   ) {
     this.signUpForm = new FormGroup(
       {
@@ -67,20 +75,39 @@ export class SignupPage {
   //TODO set username
   signUpWithEmailAndPassword() {
     if (this.signUpForm.valid) {
-      this.authService
-        .signUpWithEmailAndPassword(
-          this.signUpForm.value.email,
-          this.signUpForm.value.password
-        )
-        .pipe(take(1))
-        .subscribe((user) => {
-          user.userName = this.signUpForm.value.userName;
-          this.userService.addUserDataToFirebase(user).then(() => {
-            this.userService.storeUserData(user).then(() => {
-              this.signUpForm.reset();
-              this.router.navigateByUrl('/home');
-            });
-          });
+      this.loadingCtrl
+        .create({
+          keyboardClose: true,
+          message: 'Bejelentkezés...',
+        })
+        .then((loadingEl) => {
+          this.authService
+            .signUpWithEmailAndPassword(
+              this.signUpForm.value.email,
+              this.signUpForm.value.password
+            )
+            .pipe(take(1))
+            .subscribe(
+              (user) => {
+                user.userName = this.signUpForm.value.userName;
+                this.userService.addUserDataToFirebase(user).then(() => {
+                  this.userService.storeUserData(user).then(() => {
+                    loadingEl.dismiss();
+                    this.signUpForm.reset();
+                    this.router.navigateByUrl('/home');
+                  });
+                });
+              },
+              (errRes) => {
+                loadingEl.dismiss();
+                const code = errRes.error.error.message;
+                let message = 'Bejelentkezési hiba.';
+                if (code === 'EMAIL_EXISTS') {
+                  message = 'A megadott E-mail cím már foglalt!';
+                }
+                this.showAlert(message);
+              }
+            );
         });
     }
   }
@@ -97,4 +124,12 @@ export class SignupPage {
       return { notSame: true };
     }
   };
+
+  private showAlert(message: string) {
+    this.alertCtrl
+      .create({ header: 'Autentikáció', message, buttons: ['Okay'] })
+      .then((alertEl) => {
+        alertEl.present();
+      });
+  }
 }

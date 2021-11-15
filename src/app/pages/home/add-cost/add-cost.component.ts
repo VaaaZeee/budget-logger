@@ -28,7 +28,7 @@ export class AddCostComponent {
   constructor(private modalCtrl: ModalController) {}
 
   onCancel() {
-    this.modalCtrl.dismiss(null, 'cancel');
+    this.modalCtrl.dismiss(null, 'cancel', 'add-cost-modal');
   }
 
   addCost() {
@@ -37,9 +37,14 @@ export class AddCostComponent {
         {
           newCost: +this.newCost,
         },
-        'confirm'
+        'confirm',
+        'add-cost-modal'
       );
     }
+  }
+
+  reset() {
+    this.newCost = '0';
   }
 
   calculate() {

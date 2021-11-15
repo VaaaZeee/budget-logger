@@ -1,3 +1,6 @@
+$icon-background: #3ae96f;
+$icon-active-background: #79e79a;
+
 .item {
   ion-icon {
     font-size: 2rem;
@@ -5,13 +8,27 @@
     padding: 0.75rem;
     margin: 0;
 
-    background-color: blue;
-    transition: border 0.6s;
-    border: 8px solid lightsteelblue;
+    background-color: $icon-background;
+    transition: border 1s;
+    border: 8px solid var(--ion-background-color);
     //border: 8px solid var(--ion-background-color);
 
-    &:active {
-      border-color: rgb(125, 125, 255);
+    &.addCategory {
+      background-color: transparent;
+      color: $icon-background;
+      border: 2px solid $icon-background;
+      transition: background-color 1s;
+
+      &:active {
+        background-color: $icon-active-background;
+      }
     }
+
+    &:active {
+      border-color: $icon-active-background;
+    }
+  }
+  .spent {
+    color: $icon-background;
   }
 }

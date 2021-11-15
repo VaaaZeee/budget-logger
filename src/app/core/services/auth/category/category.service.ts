@@ -62,22 +62,23 @@ export class CategoryService {
       );
   }
 
-  addCategoryToFireBase(newCategory: Category): Promise<any> {
+  addCategoryToFireBase(newCategory: Category): Promise<string> {
     let generatedId: string;
     return this.http
-      .post<{ docId: string }>(
+      .post<{ name: string }>(
         'https://budget-loger-default-rtdb.europe-west1.firebasedatabase.app/categories.json',
-        { ...newCategory, id: null }
+        { ...newCategory, id: null, slot: null }
       )
       .pipe(
         switchMap((resData) => {
-          generatedId = resData.docId;
+          generatedId = resData.name;
           return this.categories$;
         }),
         take(1),
-        tap((categories) => {
+        map((categories) => {
           newCategory.id = generatedId;
           this.categories.next(categories.concat(newCategory));
+          return generatedId;
         })
       )
       .toPromise();
@@ -168,6 +169,25 @@ export class CategoryService {
       tap((listedCategoryData) => {
         this.listedCategories.next(listedCategoryData);
       })
+    );
+  }
+
+  storeCategory(newCategory: Category): Observable<Category[]> {
+    let listedCategories: ListedCategories[] = DEFAULT_CATEGORIES;
+    return from(Storage.get({ key: 'listedCategories' })).pipe(
+      switchMap((res) => {
+        if (!!res || !!res.value) {
+          listedCategories = JSON.parse(res.value);
+        }
+        listedCategories.push({ id: newCategory.id, slot: newCategory.slot });
+        return from(
+          Storage.set({
+            key: 'listedCategories',
+            value: JSON.stringify(listedCategories),
+          })
+        );
+      }),
+      switchMap(() => this.fetchListedCategories())
     );
   }
 }

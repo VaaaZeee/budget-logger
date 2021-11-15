@@ -13,9 +13,9 @@ import { setUserAction } from '../../state/user/user.actions';
 export class UserService {
   constructor(private http: HttpClient, private store: Store) {}
 
-  addUserDataToFirebase(user: User): Promise<{ docId: string }> {
+  addUserDataToFirebase(user: User): Promise<{ name: string }> {
     return this.http
-      .post<{ docId: string }>(
+      .post<{ name: string }>(
         'https://budget-loger-default-rtdb.europe-west1.firebasedatabase.app/users.json',
         { ...user }
       )

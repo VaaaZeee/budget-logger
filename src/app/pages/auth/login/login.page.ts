@@ -1,7 +1,12 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { MenuController, NavController } from '@ionic/angular';
+import {
+  AlertController,
+  LoadingController,
+  MenuController,
+  NavController,
+} from '@ionic/angular';
 import { switchMap, take } from 'rxjs/operators';
 import { AuthService } from 'src/app/core/services/auth/auth.service';
 import { UserService } from 'src/app/core/services/auth/user.service';
@@ -12,6 +17,7 @@ import { UserService } from 'src/app/core/services/auth/user.service';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage {
+  isLoading = false;
   loginForm = new FormGroup({
     email: new FormControl(null, {
       updateOn: 'change',
@@ -28,7 +34,9 @@ export class LoginPage {
     private authService: AuthService,
     private router: Router,
     private userService: UserService,
-    private menuCtrl: MenuController
+    private menuCtrl: MenuController,
+    private loadingCtrl: LoadingController,
+    private alertCtrl: AlertController
   ) {}
 
   ionViewWillEnter() {
@@ -45,23 +53,53 @@ export class LoginPage {
 
   loginWithEmailAndPassword() {
     if (this.loginForm.valid) {
-      this.authService
-        .loginWithEmailAndPassword(
-          this.loginForm.value.email,
-          this.loginForm.value.password
-        )
-        .pipe(
-          take(1),
-          switchMap((resData) =>
-            this.userService.fetchUserByIdFromFirevase(resData.id)
-          )
-        )
-        .subscribe((user) => {
-          this.userService.storeUserData(user).then(() => {
-            this.loginForm.reset();
-            this.router.navigateByUrl('/home');
-          });
+      this.loadingCtrl
+        .create({
+          keyboardClose: true,
+          message: 'Bejelentkezés...',
+        })
+        .then((loadingEl) => {
+          loadingEl.present();
+          this.authService
+            .loginWithEmailAndPassword(
+              this.loginForm.value.email,
+              this.loginForm.value.password
+            )
+            .pipe(
+              take(1),
+              switchMap((resData) =>
+                this.userService.fetchUserByIdFromFirevase(resData.id)
+              )
+            )
+            .subscribe(
+              (user) => {
+                this.userService.storeUserData(user).then(() => {
+                  this.loginForm.reset();
+                  loadingEl.dismiss();
+                  this.router.navigateByUrl('/home');
+                });
+              },
+              (errRes) => {
+                loadingEl.dismiss();
+                const code = errRes.error.error.message;
+                let message = 'Bejelentkezési hiba.';
+                if (code === 'EMAIL_NOT_FOUND') {
+                  message = 'Az E-mail cím nem található.';
+                } else if (code === 'INVALID_PASSWORD') {
+                  message = 'A megadott jelszó helytelen.';
+                }
+                this.showAlert(message);
+              }
+            );
         });
     }
+  }
+
+  private showAlert(message: string) {
+    this.alertCtrl
+      .create({ header: 'Autentikáció', message, buttons: ['Okay'] })
+      .then((alertEl) => {
+        alertEl.present();
+      });
   }
 }

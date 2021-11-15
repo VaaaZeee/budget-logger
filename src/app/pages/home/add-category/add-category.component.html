@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar class="ion-text-center">
+    <ion-title> Új Kategória </ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="onCancel()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="primary">
+      <ion-button (click)="createNewGroup()">
+        <ion-icon name="checkmark"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="newCategoryForm">
+    <ion-grid>
+      <ion-row>
+        <ion-col (click)="openIconListModal()" size="2">
+          <ion-icon [name]="selectedIcon"></ion-icon>
+        </ion-col>
+        <ion-col size="10">
+          <ion-item>
+            <ion-label position="floating">Név</ion-label>
+            <ion-input
+              type="text"
+              name="name"
+              formControlName="categoryName"
+              required
+            ></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>

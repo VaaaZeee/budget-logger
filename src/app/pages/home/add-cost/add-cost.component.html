@@ -1,9 +1,14 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar class="ion-text-center">
     <ion-title>{{ category.name }}</ion-title>
     <ion-buttons slot="primary">
       <ion-button (click)="onCancel()">
         <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="start">
+      <ion-button>
+        <ion-icon slot="start" name="wallet"></ion-icon>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
@@ -14,9 +19,7 @@
     <div class="header title">
       <ion-icon [name]="category.iconName"></ion-icon>
     </div>
-    <div class="header amount">
-      {{ newCost | currency: currency:"symbol":"1.0-0" }}
-    </div>
+    <div class="header amount">{{ newCost }}{{ " " + currency }}</div>
     <div class="grid divide" (click)="addOperation({ operation: '/' })">/</div>
     <div class="grid multiplication" (click)="addOperation({ operation: 'x' })">
       x
@@ -25,12 +28,14 @@
       -
     </div>
     <div class="grid add" (click)="addOperation({ operation: '+' })">+</div>
+    <div class="grid currency">{{ currency }}</div>
     <div class="grid button-7" (click)="addNumber('7')">7</div>
     <div class="grid button-8" (click)="addNumber('8')">8</div>
     <div class="grid button-9" (click)="addNumber('9')">9</div>
     <div class="grid button-4" (click)="addNumber('4')">4</div>
     <div class="grid button-5" (click)="addNumber('5')">5</div>
     <div class="grid button-6" (click)="addNumber('6')">6</div>
+    <div class="grid clear" (click)="reset()">CE</div>
     <div class="grid button-1" (click)="addNumber('1')">1</div>
     <div class="grid button-2" (click)="addNumber('2')">2</div>
     <div class="grid button-3" (click)="addNumber('3')">3</div>

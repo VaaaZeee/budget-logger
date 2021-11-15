@@ -1,26 +1,51 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start" menuId="main">
+  <ion-toolbar class="ion-text-center">
+    <ion-buttons *ngIf="!isEditMode" slot="start" menuId="main">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Budget Loger</ion-title>
+    <ion-buttons *ngIf="isEditMode" slot="start">
+      <ion-button (click)="switchToEdit()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title
+      >{{isEditMode ? 'Kategóriák szerkesztése' : 'Budget Loger'}}</ion-title
+    >
+    <ion-buttons slot="primary">
+      <ion-button (click)="switchToEdit()">
+        <ion-icon name="pencil"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-text-center">
-  <ng-container *ngIf="categoryService.listedCategories$ | async as categories">
+  <ng-container
+    *ngIf="categoryService.listedCategories$ | async as categories; else loading"
+  >
     <div class="container">
       <ng-container *ngFor="let category of categories">
         <div class="grid {{category.slot}}">
           <app-category [category]="category"></app-category>
         </div>
       </ng-container>
-      <div class="grid row-big">
+      <ng-container *ngIf="categories.length < 12">
+        <div class="grid item-{{categories.length + 1}}">
+          <app-category
+            (isLoading)="isLoadingEvent($event)"
+            [slot]="('item-' + (categories.length + 1) | castToGridSlot)"
+          >
+          </app-category>
+        </div>
+      </ng-container>
+      <div class="grid item-big">
         <div class="item center">
-          <ion-label>Élelmiszer</ion-label>
-          <ion-icon name="basket"></ion-icon>
+          <circle-progress [percent]="100" [title]="'Cél'"></circle-progress>
         </div>
       </div>
     </div>
   </ng-container>
+  <ng-template #loading
+    ><ion-spinner color="primary"></ion-spinner
+  ></ng-template>
 </ion-content>

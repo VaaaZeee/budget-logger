@@ -1,0 +1,118 @@
+.icon {
+  -webkit-text-fill-color: white;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+
+ion-grid {
+  height: 100%;
+}
+
+.input {
+  height: 100%;
+}
+
+.container {
+  display: grid;
+  height: 100%;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 0.25rem 0.25rem;
+  grid-template-areas:
+    "title title title title title"
+    "amount amount amount amount amount"
+    "divide button-7 button-8 button-9 back"
+    "multiplication button-4 button-5 button-6 row-25"
+    "subtraction button-1 button-2 button-3 submit"
+    "add row-42 button-0 separator submit";
+  justify-content: stretch;
+  justify-items: stretch;
+  align-items: stretch;
+  background-color: rgb(157, 175, 199);
+  font-size: 2.5rem;
+}
+
+.header {
+  overflow: hidden;
+  word-break: break-all;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid {
+  overflow: hidden;
+  word-break: break-all;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: lightsteelblue;
+  transition: background-color 1s;
+
+  &:active {
+    background-color: magenta;
+  }
+}
+.divide {
+  grid-area: divide;
+}
+.multiplication {
+  grid-area: multiplication;
+}
+.subtraction {
+  grid-area: subtraction;
+}
+.add {
+  grid-area: add;
+}
+.button-7 {
+  grid-area: button-7;
+}
+.button-8 {
+  grid-area: button-8;
+}
+.button-9 {
+  grid-area: button-9;
+}
+.button-4 {
+  grid-area: button-4;
+}
+.button-5 {
+  grid-area: button-5;
+}
+.button-6 {
+  grid-area: button-6;
+}
+.button-1 {
+  grid-area: button-1;
+}
+.button-2 {
+  grid-area: button-2;
+}
+.button-3 {
+  grid-area: button-3;
+}
+.button-0 {
+  grid-area: button-0;
+}
+.submit {
+  grid-area: submit;
+}
+.separator {
+  grid-area: separator;
+}
+.back {
+  grid-area: back;
+}
+.row-25 {
+  grid-area: row-25;
+}
+.row-42 {
+  grid-area: row-42;
+}
+.amount {
+  grid-area: amount;
+}
+.title {
+  grid-area: title;
+}

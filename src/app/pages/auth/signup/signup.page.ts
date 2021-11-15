@@ -10,8 +10,8 @@ import {
 import { Router } from '@angular/router';
 import { MenuController, NavController } from '@ionic/angular';
 import { take } from 'rxjs/operators';
-import { AuthService } from 'src/app/core/services/auth.service';
-import { UserService } from 'src/app/core/services/user.service';
+import { AuthService } from 'src/app/core/services/auth/auth.service';
+import { UserService } from 'src/app/core/services/auth/user.service';
 
 @Component({
   selector: 'app-signup',

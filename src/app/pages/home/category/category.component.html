@@ -1,0 +1,7 @@
+<div class="item">
+  <ion-label [innerText]="category.name"></ion-label>
+  <ion-icon (click)="openAddCostModal()" [name]="category.iconName"></ion-icon>
+  <ion-label>{{
+    category.spent | currency: currency:"symbol":"1.0-0"
+  }}</ion-label>
+</div>

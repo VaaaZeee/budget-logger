@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { take } from 'rxjs/operators';
+import { CategoryService } from 'src/app/core/services/category.service';
 
 @Component({
   selector: 'app-home',
@@ -6,10 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements OnInit {
+  constructor(public categoryService: CategoryService) {}
 
-  constructor() { }
+  ngOnInit() {}
 
-  ngOnInit() {
+  ionViewWillEnter() {
+    this.categoryService.fetchListedCategories().pipe(take(1)).subscribe();
   }
-
 }

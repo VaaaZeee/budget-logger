@@ -1,53 +1,89 @@
 .container {
   display: grid;
-  grid-gap: 10px;
-  padding: 10px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    "row11 row12 row13 row14"
+    "row21 row-big row-big row24"
+    "row31 row-big row-big row34"
+    "row41 row42 row43 row44";
+  justify-content: stretch;
+  justify-items: stretch;
+  align-items: stretch;
+  grid-gap: 0.25rem;
   height: 100%;
+  padding: 0;
+  margin: 0;
 
   .grid {
+    overflow: hidden;
+    word-break: break-all;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 20px;
-    font-size: 30px;
+    background-color: lightsteelblue;
+
+    .item {
+      ion-icon {
+        font-size: 2rem;
+        border-radius: 50%;
+        padding: 0.75rem;
+        margin: 0;
+
+        background-color: blue;
+        transition: border 0.6s;
+        border: 8px solid lightsteelblue;
+        //border: 8px solid var(--ion-background-color);
+
+        &:active {
+          border-color: rgb(125, 125, 255);
+        }
+      }
+    }
+    .center {
+      ion-icon {
+        font-size: 5rem;
+      }
+    }
   }
-  .item {
-    &-1 {
-      grid-row: 1;
-    }
-    &-2 {
-      grid-row: 2;
-    }
-    &-3 {
-      grid-row: 3;
-    }
-    &-4 {
-      grid-row: 4;
-    }
 
-    &-center {
-      grid-area: 2 / 2 / span 2 / span 2;
-    }
+  .row11 {
+    grid-area: row11;
   }
-}
-
-.item {
-  grid-row: 1;
-}
-
-.item2 {
-  grid-row: 2;
-}
-
-.item3 {
-  grid-row: 3;
-}
-
-.item4 {
-  grid-row: 4;
-}
-
-.big-item {
-  grid-area: 2 / 2 / span 2 / span 2;
+  .row12 {
+    grid-area: row12;
+  }
+  .row13 {
+    grid-area: row13;
+  }
+  .row14 {
+    grid-area: row14;
+  }
+  .row-big {
+    grid-area: row-big;
+  }
+  .row21 {
+    grid-area: row21;
+  }
+  .row24 {
+    grid-area: row24;
+  }
+  .row31 {
+    grid-area: row31;
+  }
+  .row34 {
+    grid-area: row34;
+  }
+  .row41 {
+    grid-area: row41;
+  }
+  .row42 {
+    grid-area: row42;
+  }
+  .row43 {
+    grid-area: row43;
+  }
+  .row44 {
+    grid-area: row44;
+  }
 }

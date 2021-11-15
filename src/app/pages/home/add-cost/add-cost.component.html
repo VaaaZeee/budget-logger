@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ category.name }}</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button (click)="onCancel()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+    <div class="header title">
+      <ion-icon [name]="category.iconName"></ion-icon>
+    </div>
+    <div class="header amount">
+      {{ newCost | currency: currency:"symbol":"1.0-0" }}
+    </div>
+    <div class="grid divide" (click)="addOperation({ operation: '/' })">/</div>
+    <div class="grid multiplication" (click)="addOperation({ operation: 'x' })">
+      x
+    </div>
+    <div class="grid subtraction" (click)="addOperation({ operation: '-' })">
+      -
+    </div>
+    <div class="grid add" (click)="addOperation({ operation: '+' })">+</div>
+    <div class="grid button-7" (click)="addNumber('7')">7</div>
+    <div class="grid button-8" (click)="addNumber('8')">8</div>
+    <div class="grid button-9" (click)="addNumber('9')">9</div>
+    <div class="grid button-4" (click)="addNumber('4')">4</div>
+    <div class="grid button-5" (click)="addNumber('5')">5</div>
+    <div class="grid button-6" (click)="addNumber('6')">6</div>
+    <div class="grid button-1" (click)="addNumber('1')">1</div>
+    <div class="grid button-2" (click)="addNumber('2')">2</div>
+    <div class="grid button-3" (click)="addNumber('3')">3</div>
+    <div class="grid button-0" (click)="addNumber('0')">0</div>
+    <div class="grid submit" (click)="addCost()" *ngIf="isCalculated()">
+      <ion-icon name="checkmark"></ion-icon>
+    </div>
+    <div class="grid submit" (click)="calculate()" *ngIf="!isCalculated()">
+      <ion-icon name="reorder-two"></ion-icon>
+    </div>
+    <div class="grid separator" (click)="addSeparator()">,</div>
+    <div class="grid back" (click)="delete()">
+      <ion-icon name="backspace"></ion-icon>
+    </div>
+  </div>
+</ion-content>

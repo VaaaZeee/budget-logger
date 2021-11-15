@@ -7,20 +7,20 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <div class="container">
-    <div class="grid item-1">1</div>
-    <div class="grid item-1">2</div>
-    <div class="grid item-1">3</div>
-    <div class="grid item-1">4</div>
-    <div class="grid item-2">5</div>
-    <div class="grid item-center">6</div>
-    <div class="grid item-2">7</div>
-    <div class="grid item-3">8</div>
-    <div class="grid item-3">9</div>
-    <div class="grid item-4">10</div>
-    <div class="grid item-4">11</div>
-    <div class="grid item-4">12</div>
-    <div class="grid item-4">13</div>
-  </div>
+<ion-content class="ion-text-center">
+  <ng-container *ngIf="categoryService.listedCategories$ | async as categories">
+    <div class="container">
+      <ng-container *ngFor="let category of categories">
+        <div class="grid {{category.slot}}">
+          <app-category [category]="category"></app-category>
+        </div>
+      </ng-container>
+      <div class="grid row-big">
+        <div class="item center">
+          <ion-label>Élelmiszer</ion-label>
+          <ion-icon name="basket"></ion-icon>
+        </div>
+      </div>
+    </div>
+  </ng-container>
 </ion-content>

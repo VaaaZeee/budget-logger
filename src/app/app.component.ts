@@ -1,9 +1,8 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Subscription } from 'rxjs';
-import { take, tap } from 'rxjs/operators';
-import { AuthService } from './core/services/auth.service';
-import { UserService } from './core/services/user.service';
+import { take } from 'rxjs/operators';
+import { AuthService } from './core/services/auth/auth.service';
+import { UserService } from './core/services/auth/user.service';
 import { User } from './shared/models/user.model';
 
 @Component({
@@ -11,7 +10,7 @@ import { User } from './shared/models/user.model';
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private userService: UserService,
@@ -31,6 +30,8 @@ export class AppComponent {
         }
       );
   }
+
+  ngOnInit(): void {}
 
   logOut() {
     this.authService.logout().then(() => this.router.navigateByUrl('/login'));

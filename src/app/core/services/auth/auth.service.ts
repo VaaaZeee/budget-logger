@@ -1,13 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { distinctUntilChanged, filter, map, switchMap } from 'rxjs/operators';
+import { map, switchMap } from 'rxjs/operators';
 import { Store } from '@ngrx/store';
 import { Storage } from '@capacitor/storage';
 import { from, Observable, of } from 'rxjs';
 import { User } from 'src/app/shared/models/user.model';
 import { UserService } from './user.service';
-import { resetUserAction } from '../state/user/user.actions';
+import { resetUserAction } from '../../state/user/user.actions';
 
 export interface AuthResponseData {
   kind: string;

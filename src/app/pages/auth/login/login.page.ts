@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { MenuController, NavController } from '@ionic/angular';
-import { map, switchMap, take, tap } from 'rxjs/operators';
-import { AuthService } from 'src/app/core/services/auth.service';
-import { UserService } from 'src/app/core/services/user.service';
+import { switchMap, take } from 'rxjs/operators';
+import { AuthService } from 'src/app/core/services/auth/auth.service';
+import { UserService } from 'src/app/core/services/auth/user.service';
 
 @Component({
   selector: 'app-login',

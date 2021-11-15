@@ -5,7 +5,7 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { User } from 'src/app/shared/models/user.model';
-import { setUserAction } from '../state/user/user.actions';
+import { setUserAction } from '../../state/user/user.actions';
 
 @Injectable({
   providedIn: 'root',

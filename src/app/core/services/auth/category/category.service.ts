@@ -102,6 +102,41 @@ export class CategoryService {
       );
   }
 
+  async updateCategory(category: Category) {
+    let updatedCategories: Category[] = [];
+    await this.listedCategories$
+      .pipe(
+        take(1),
+        switchMap((categories) => {
+          if (!categories || categories.length <= 0) {
+            return this.fetchListedCategories();
+          }
+          return of(categories);
+        }),
+        switchMap((categories) => {
+          const updatedCategoriesIndex = categories.findIndex(
+            (cat) => cat.id === category.id
+          );
+          updatedCategories = [...categories];
+          const oldCategory = updatedCategories[updatedCategoriesIndex];
+          updatedCategories[updatedCategoriesIndex] = new Category(
+            oldCategory.id,
+            category.name,
+            oldCategory.spent,
+            category.iconName
+          );
+          return this.http.put(
+            `https://budget-loger-default-rtdb.europe-west1.firebasedatabase.app/categories/${category.id}.json`,
+            { ...updatedCategories[updatedCategoriesIndex], id: null }
+          );
+        }),
+        tap(() => {
+          this.listedCategories.next(updatedCategories);
+        })
+      )
+      .toPromise();
+  }
+
   async updateCategoryCost(categoryId: string, cost: number): Promise<void> {
     let updatedCategories: Category[] = [];
     await this.listedCategories$
@@ -132,6 +167,25 @@ export class CategoryService {
         }),
         tap(() => {
           this.listedCategories.next(updatedCategories);
+        })
+      )
+      .toPromise();
+  }
+
+  async deleteCategory(categoryId: string): Promise<void> {
+    await this.http
+      .delete(
+        `https://budget-loger-default-rtdb.europe-west1.firebasedatabase.app/categories/${categoryId}.json`
+      )
+      .pipe(
+        switchMap(() => this.listedCategories$),
+        take(1),
+        tap((listedCategories) => {
+          const filteredListedCategories = listedCategories.filter(
+            (category) => category.id !== categoryId
+          );
+          this.listedCategories.next(filteredListedCategories);
+          this.storeCategoryList(filteredListedCategories);
         })
       )
       .toPromise();
@@ -170,6 +224,15 @@ export class CategoryService {
         this.listedCategories.next(listedCategoryData);
       })
     );
+  }
+
+  storeCategoryList(categoryList: Category[]): Observable<Category[]> {
+    return from(
+      Storage.set({
+        key: 'listedCategories',
+        value: JSON.stringify(categoryList),
+      })
+    ).pipe(switchMap(() => this.fetchListedCategories()));
   }
 
   storeCategory(newCategory: Category): Observable<Category[]> {

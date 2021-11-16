@@ -23,13 +23,11 @@ export class HomePage implements OnInit {
   }
 
   isLoadingEvent(isLoading: boolean) {
-    console.log('loading');
     this.isLoading = isLoading;
   }
 
   switchToEdit() {
     this.menuCtrl.enable(this.isEditMode, 'main');
     this.isEditMode = !this.isEditMode;
-    console.log('edit');
   }
 }

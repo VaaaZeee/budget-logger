@@ -1,13 +1,13 @@
 <ion-header>
   <ion-toolbar class="ion-text-center">
-    <ion-title> Új Kategória </ion-title>
+    <ion-title> Kategória módosítása </ion-title>
     <ion-buttons slot="start">
-      <ion-button (click)="onCancel()">
-        <ion-icon name="close"></ion-icon>
+      <ion-button (click)="cancel()">
+        <ion-icon name="arrow-back"></ion-icon>
       </ion-button>
     </ion-buttons>
     <ion-buttons slot="primary">
-      <ion-button (click)="createNewGroup()">
+      <ion-button (click)="update()" [disabled]="!editCategoryForm.valid">
         <ion-icon name="checkmark"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -15,7 +15,7 @@
 </ion-header>
 
 <ion-content>
-  <form [formGroup]="newCategoryForm">
+  <form [formGroup]="editCategoryForm">
     <ion-grid>
       <ion-row>
         <ion-col class="icon-list" (click)="openIconListModal()" size="2">
@@ -31,6 +31,17 @@
               required
             ></ion-input>
           </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-button
+            class="delete-button"
+            color="danger"
+            expand="block"
+            (click)="deleteCategory()"
+            >Kategória Törlése</ion-button
+          >
         </ion-col>
       </ion-row>
     </ion-grid>

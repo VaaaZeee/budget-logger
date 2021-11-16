@@ -5,6 +5,7 @@ import { CategoryService } from 'src/app/core/services/auth/category/category.se
 import { Category, GridSlot } from 'src/app/shared/models/category.model';
 import { AddCategoryComponent } from '../add-category/add-category.component';
 import { AddCostComponent } from '../add-cost/add-cost.component';
+import { EditCategoryComponent } from '../edit-category/edit-category.component';
 
 @Component({
   selector: 'app-category',
@@ -15,12 +16,44 @@ export class CategoryComponent {
   @Input() category: Category;
   @Input() slot: GridSlot;
   @Input() currency = 'Ft ';
+  @Input() isEditMode: boolean;
   @Output() isLoading = new EventEmitter<boolean>();
 
   constructor(
     private modalCtrl: ModalController,
     private categoryService: CategoryService
   ) {}
+
+  openEditCategoryModal() {
+    this.modalCtrl
+      .create({
+        component: EditCategoryComponent,
+        cssClass: 'update-category-modal',
+        id: 'update-category-modal',
+        componentProps: { category: this.category },
+      })
+      .then((modalEl) => {
+        modalEl.present();
+        return modalEl.onDidDismiss();
+      })
+      .then(async (resData) => {
+        if (
+          resData.role === 'confirm' &&
+          (resData.data || resData.data.updatedCategory)
+        ) {
+          await this.categoryService.updateCategory(
+            new Category(
+              this.category.id,
+              resData.data.updatedCategory.name,
+              this.category.spent,
+              resData.data.updatedCategory.iconName
+            )
+          );
+        } else if (resData.role === 'delete') {
+          await this.categoryService.deleteCategory(this.category.id);
+        }
+      });
+  }
 
   openAddCategoryModal() {
     this.modalCtrl
@@ -70,12 +103,12 @@ export class CategoryComponent {
         modalEl.present();
         return modalEl.onDidDismiss();
       })
-      .then((resData) => {
+      .then(async (resData) => {
         if (
           resData.role === 'confirm' &&
           (resData.data || resData.data.newCost)
         ) {
-          this.categoryService.updateCategoryCost(
+          await this.categoryService.updateCategoryCost(
             this.category.id,
             resData.data.newCost
           );

@@ -26,7 +26,10 @@
     <div class="container">
       <ng-container *ngFor="let category of categories">
         <div class="grid {{category.slot}}">
-          <app-category [category]="category"></app-category>
+          <app-category
+            [category]="category"
+            [isEditMode]="isEditMode"
+          ></app-category>
         </div>
       </ng-container>
       <ng-container *ngIf="categories.length < 12">

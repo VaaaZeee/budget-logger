@@ -13,6 +13,7 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
 import { AddCategoryComponent } from './add-category/add-category.component';
 import { IconListModule } from 'src/app/shared/icon-list/icon-list.module';
 import { CastToGridSlotPipeModule } from 'src/app/shared/pipes/cast/cast-to-grid-slot.module';
+import { EditCategoryComponent } from './edit-category/edit-category.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { CastToGridSlotPipeModule } from 'src/app/shared/pipes/cast/cast-to-grid
     CategoryComponent,
     AddCostComponent,
     AddCategoryComponent,
+    EditCategoryComponent,
   ],
   imports: [
     CommonModule,

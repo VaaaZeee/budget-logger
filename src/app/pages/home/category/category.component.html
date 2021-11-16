@@ -2,7 +2,7 @@
   <div class="item">
     <ion-label [innerText]="category.name"></ion-label>
     <ion-icon
-      (click)="openAddCostModal()"
+      (click)="isEditMode ? openEditCategoryModal() : openAddCostModal()"
       [name]="category.iconName"
     ></ion-icon>
     <ion-label class="spent">{{

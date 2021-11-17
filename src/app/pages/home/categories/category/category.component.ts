@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-import { CategoryService } from 'src/app/core/services/auth/category/category.service';
+import { CategoryService } from 'src/app/core/services/category/category.service';
 import { Category, GridSlot } from 'src/app/shared/models/category.model';
 import { AddCategoryComponent } from '../add-category/add-category.component';
 import { AddCostComponent } from '../add-cost/add-cost.component';

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuController } from '@ionic/angular';
 import { take } from 'rxjs/operators';
-import { CategoryService } from 'src/app/core/services/auth/category/category.service';
+import { CategoryService } from 'src/app/core/services/category/category.service';
 
 @Component({
   selector: 'app-categories',

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import {
   AbstractControl,
   FormControl,
@@ -15,9 +15,8 @@ import {
   NavController,
 } from '@ionic/angular';
 import { take } from 'rxjs/operators';
-import { Alert } from 'selenium-webdriver';
 import { AuthService } from 'src/app/core/services/auth/auth.service';
-import { CategoryService } from 'src/app/core/services/auth/category/category.service';
+import { CategoryService } from 'src/app/core/services/category/category.service';
 import { UserService } from 'src/app/core/services/auth/user.service';
 
 @Component({
@@ -82,6 +81,7 @@ export class SignupPage {
           message: 'Regisztráció...',
         })
         .then((loadingEl) => {
+          loadingEl.present();
           this.authService
             .signUpWithEmailAndPassword(
               this.signUpForm.value.email,

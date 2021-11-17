@@ -29,7 +29,6 @@ export class CategoryService {
   }
 
   setDefaultCategoriesForNewUser(userId: string) {
-    let generatedId: string;
     return this.http
       .get<{ [key: string]: Category }>(
         `https://budget-loger-default-rtdb.europe-west1.firebasedatabase.app/default-categories.json`

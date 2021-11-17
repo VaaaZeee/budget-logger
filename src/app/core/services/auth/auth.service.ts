@@ -8,7 +8,7 @@ import { from, Observable } from 'rxjs';
 import { User } from 'src/app/shared/models/user.model';
 import { UserService } from './user.service';
 import { resetUserAction } from '../../state/user/user.actions';
-import { CategoryService } from './category/category.service';
+import { CategoryService } from '../category/category.service';
 
 export interface AuthResponseData {
   kind: string;

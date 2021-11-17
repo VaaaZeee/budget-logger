@@ -1,18 +1,19 @@
 <ion-app>
-  <ion-menu side="start" menuId="main" contentId="main">
+  <ion-menu
+    *ngIf="user$ | async as user"
+    side="start"
+    menuId="main"
+    contentId="main"
+  >
     <ion-header>
       <ion-toolbar color="primary">
-        <ion-title>Start Menu</ion-title>
+        <ion-title>{{ user.userName }}</ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content>
       <ion-list>
         <ion-menu-toggle>
-          <ion-item lines="none">Menu Item</ion-item>
-          <ion-item lines="none">Menu Item</ion-item>
-          <ion-item lines="none">Menu Item</ion-item>
-          <ion-item lines="none">Menu Item</ion-item>
-          <ion-item lines="none" (click)="logOut()">
+          <ion-item class="logout" lines="none" (click)="logOut()">
             <ion-icon slot="start" name="log-out-outline"></ion-icon>
             <ion-label>Kijelentkezés</ion-label>
           </ion-item>

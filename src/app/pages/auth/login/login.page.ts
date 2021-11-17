@@ -39,7 +39,7 @@ export class LoginPage {
     private alertCtrl: AlertController
   ) {}
 
-  ionViewWillEnter() {
+  ionViewDidEnter() {
     this.menuCtrl.enable(false);
   }
 
@@ -78,7 +78,7 @@ export class LoginPage {
                 this.userService.storeUserData(user).then(() => {
                   this.loginForm.reset();
                   loadingEl.dismiss();
-                  this.router.navigateByUrl('/home');
+                  this.router.navigateByUrl('/home/categories');
                 });
               },
               (errRes) => {

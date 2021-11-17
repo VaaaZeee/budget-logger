@@ -1,0 +1,71 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    "item-1 item-2 item-3 item-4"
+    "item-5 item-big item-big item-6"
+    "item-7 item-big item-big item-8"
+    "item-9 item-10 item-11 item-12";
+  justify-content: stretch;
+  justify-items: stretch;
+  align-items: stretch;
+  grid-gap: 0.25rem;
+  height: 100%;
+  padding: 1.5rem 0;
+  margin: 0;
+
+  .grid {
+    overflow: hidden;
+    word-break: break-all;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .center {
+      ion-icon {
+        font-size: 5rem;
+      }
+    }
+  }
+
+  .item-1 {
+    grid-area: item-1;
+  }
+  .item-2 {
+    grid-area: item-2;
+  }
+  .item-3 {
+    grid-area: item-3;
+  }
+  .item-4 {
+    grid-area: item-4;
+  }
+  .item-5 {
+    grid-area: item-5;
+  }
+  .item-6 {
+    grid-area: item-6;
+  }
+  .item-7 {
+    grid-area: item-7;
+  }
+  .item-8 {
+    grid-area: item-8;
+  }
+  .item-9 {
+    grid-area: item-9;
+  }
+  .item-10 {
+    grid-area: item-10;
+  }
+  .item-11 {
+    grid-area: item-11;
+  }
+  .item-12 {
+    grid-area: item-12;
+  }
+  .item-big {
+    grid-area: item-big;
+  }
+}

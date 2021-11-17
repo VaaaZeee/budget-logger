@@ -62,7 +62,7 @@ export class SignupPage {
     );
   }
 
-  ionViewWillEnter() {
+  ionViewDidEnter() {
     this.menuCtrl.enable(false);
   }
 
@@ -105,7 +105,7 @@ export class SignupPage {
                   .then(() => {
                     loadingEl.dismiss();
                     this.signUpForm.reset();
-                    this.router.navigateByUrl('/home');
+                    this.router.navigateByUrl('/home/categories');
                   });
               },
               (errRes) => {

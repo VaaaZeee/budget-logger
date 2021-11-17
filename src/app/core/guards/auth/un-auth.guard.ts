@@ -22,7 +22,7 @@ export class UnAuthGuard implements CanActivate {
         if (!userData || !userData.value) {
           return true;
         } else {
-          this.router.navigateByUrl('/home');
+          this.router.navigateByUrl('/home/categories');
           return false;
         }
       })
@@ -35,7 +35,7 @@ export class UnAuthGuard implements CanActivate {
         if (!userData || !userData.value) {
           return true;
         } else {
-          this.router.navigateByUrl('/home');
+          this.router.navigateByUrl('/home/categories');
           return false;
         }
       })

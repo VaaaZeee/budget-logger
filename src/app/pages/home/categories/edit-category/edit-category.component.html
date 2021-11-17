@@ -19,7 +19,10 @@
     <ion-grid>
       <ion-row>
         <ion-col class="icon-list" (click)="openIconListModal()" size="2">
-          <ion-icon [name]="selectedIcon"></ion-icon>
+          <ion-icon
+            [style.background-color]="selectedColor"
+            [name]="selectedIcon"
+          ></ion-icon>
         </ion-col>
         <ion-col size="10">
           <ion-item>

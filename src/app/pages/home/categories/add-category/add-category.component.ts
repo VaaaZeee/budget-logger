@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ModalController } from '@ionic/angular';
-import { IconListComponent } from 'src/app/shared/icon-list/icon-list.component';
+import { IconCreateorComponent } from 'src/app/shared/icon-createor/icon-createor.component';
 
 @Component({
   selector: 'app-add-category',
@@ -10,6 +10,7 @@ import { IconListComponent } from 'src/app/shared/icon-list/icon-list.component'
 })
 export class AddCategoryComponent implements OnInit {
   selectedIcon = 'basket';
+  selectedColor = '#3ae96f';
   newCategoryForm = new FormGroup({
     categoryName: new FormControl(null, {
       updateOn: 'change',
@@ -31,6 +32,7 @@ export class AddCategoryComponent implements OnInit {
         {
           categoryName: this.newCategoryForm.value.categoryName,
           iconName: this.selectedIcon,
+          color: this.selectedColor,
         },
         'confirm',
         'add-category-modal'
@@ -41,10 +43,13 @@ export class AddCategoryComponent implements OnInit {
   openIconListModal() {
     this.modalCtrl
       .create({
-        component: IconListComponent,
-        cssClass: 'icon-list-modal',
-        id: 'icon-list-modal',
-        componentProps: { selectedIcon: this.selectedIcon },
+        component: IconCreateorComponent,
+        cssClass: 'icon-creator-modal',
+        id: 'icon-creator-modal',
+        componentProps: {
+          selectedIcon: this.selectedIcon,
+          color: this.selectedColor,
+        },
       })
       .then((modalEl) => {
         modalEl.present();
@@ -53,6 +58,7 @@ export class AddCategoryComponent implements OnInit {
       .then((resData) => {
         if (resData.role === 'confirm') {
           this.selectedIcon = resData.data.selectedIcon;
+          this.selectedColor = resData.data.selectedColor;
         }
       });
   }

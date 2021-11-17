@@ -4,8 +4,9 @@
     <ion-icon
       (click)="isEditMode ? openEditCategoryModal() : openAddCostModal()"
       [name]="category.iconName"
+      [style.background-color]="category.color"
     ></ion-icon>
-    <ion-label class="spent">{{
+    <ion-label [style.color]="category.color" class="spent">{{
       category.spent | currency: currency:"symbol":"1.0-0"
     }}</ion-label>
   </div>

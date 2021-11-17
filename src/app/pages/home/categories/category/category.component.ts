@@ -1,6 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-import { take } from 'rxjs/operators';
 import { CategoryService } from 'src/app/core/services/auth/category/category.service';
 import { Category, GridSlot } from 'src/app/shared/models/category.model';
 import { AddCategoryComponent } from '../add-category/add-category.component';
@@ -46,7 +45,8 @@ export class CategoryComponent {
               this.category.id,
               resData.data.updatedCategory.name,
               this.category.spent,
-              resData.data.updatedCategory.iconName
+              resData.data.updatedCategory.iconName,
+              resData.data.updatedCategory.color
             )
           );
         } else if (resData.role === 'delete') {
@@ -73,7 +73,8 @@ export class CategoryComponent {
             'new',
             resData.data.categoryName,
             0,
-            resData.data.iconName
+            resData.data.iconName,
+            resData.data.color
           );
           await this.categoryService
             .addCategoryToFireBase(newCategory)

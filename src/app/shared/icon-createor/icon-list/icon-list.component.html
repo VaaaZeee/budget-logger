@@ -1,0 +1,6 @@
+<ion-icon
+  *ngFor="let iconName of iconList"
+  [name]="iconName"
+  [ngClass]="{ selected: iconName === selectedIcon }"
+  (click)="setSelectedItem(iconName)"
+></ion-icon>

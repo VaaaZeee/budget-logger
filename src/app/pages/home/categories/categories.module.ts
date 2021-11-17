@@ -7,13 +7,13 @@ import { IonicModule } from '@ionic/angular';
 import { CategoriesPageRoutingModule } from './categories-routing.module';
 
 import { CategoriesPage } from './categories.page';
-import { IconListModule } from 'src/app/shared/icon-list/icon-list.module';
 import { CastToGridSlotPipeModule } from 'src/app/shared/pipes/cast/cast-to-grid-slot.module';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { CategoryComponent } from './category/category.component';
 import { AddCostComponent } from './add-cost/add-cost.component';
 import { AddCategoryComponent } from './add-category/add-category.component';
 import { EditCategoryComponent } from './edit-category/edit-category.component';
+import { IconCreateorModule } from 'src/app/shared/icon-createor/icon-createor.module';
 
 @NgModule({
   declarations: [
@@ -28,8 +28,8 @@ import { EditCategoryComponent } from './edit-category/edit-category.component';
     CategoriesPageRoutingModule,
     ReactiveFormsModule,
     IonicModule,
-    IconListModule,
     CastToGridSlotPipeModule,
+    IconCreateorModule,
     NgCircleProgressModule.forRoot({
       radius: 60,
       space: -10,

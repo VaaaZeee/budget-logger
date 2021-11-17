@@ -10,6 +10,7 @@ interface CategoryData {
   name: string;
   spent: number;
   iconName: string;
+  color: string;
 }
 
 @Injectable({
@@ -43,7 +44,8 @@ export class CategoryService {
                 key,
                 resData[key].name,
                 resData[key].spent,
-                resData[key].iconName
+                resData[key].iconName,
+                resData[key].color
               );
               defaultCategories.push(category);
             }
@@ -57,18 +59,6 @@ export class CategoryService {
                 .post<{ name: string }>(
                   `https://budget-loger-default-rtdb.europe-west1.firebasedatabase.app/users/${userId}/categories.json`,
                   { ...category, id: null }
-                )
-                .pipe(
-                  switchMap((resData) => {
-                    generatedId = resData.name;
-                    return this.categories$;
-                  }),
-                  take(1),
-                  map((categories) => {
-                    category.id = generatedId;
-                    this.categories.next(categories.concat(category));
-                    return generatedId;
-                  })
                 )
                 .toPromise();
             })
@@ -96,7 +86,8 @@ export class CategoryService {
                 key,
                 resData[key].name,
                 resData[key].spent,
-                resData[key].iconName
+                resData[key].iconName,
+                resData[key].color
               )
             );
           }
@@ -146,7 +137,8 @@ export class CategoryService {
             id,
             categoryData.name,
             categoryData.spent,
-            categoryData.iconName
+            categoryData.iconName,
+            categoryData.color
           )
       )
     );
@@ -178,7 +170,8 @@ export class CategoryService {
             oldCategory.id,
             category.name,
             oldCategory.spent,
-            category.iconName
+            category.iconName,
+            category.color
           );
           return this.http.put(
             `https://budget-loger-default-rtdb.europe-west1.firebasedatabase.app/users/${userId}/categories/${category.id}.json`,
@@ -219,7 +212,8 @@ export class CategoryService {
             oldCategory.id,
             oldCategory.name,
             oldCategory.spent + cost,
-            oldCategory.iconName
+            oldCategory.iconName,
+            oldCategory.color
           );
           return this.http.put(
             `https://budget-loger-default-rtdb.europe-west1.firebasedatabase.app/users/${userId}/categories/${categoryId}.json`,

@@ -1,7 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ModalController } from '@ionic/angular';
-import { IconListComponent } from 'src/app/shared/icon-list/icon-list.component';
+import { IconCreateorComponent } from 'src/app/shared/icon-createor/icon-createor.component';
+import { IconListComponent } from 'src/app/shared/icon-createor/icon-list/icon-list.component';
 import { Category } from 'src/app/shared/models/category.model';
 
 @Component({
@@ -12,6 +13,7 @@ import { Category } from 'src/app/shared/models/category.model';
 export class EditCategoryComponent implements OnInit {
   @Input() category: Category;
   selectedIcon: string;
+  selectedColor: string;
 
   editCategoryForm = new FormGroup({
     categoryName: new FormControl('', {
@@ -25,6 +27,7 @@ export class EditCategoryComponent implements OnInit {
   ngOnInit() {
     this.editCategoryForm.setValue({ categoryName: this.category.name });
     this.selectedIcon = this.category.iconName;
+    this.selectedColor = this.category.color;
   }
 
   update() {
@@ -36,6 +39,10 @@ export class EditCategoryComponent implements OnInit {
       }
       if (this.selectedIcon !== this.category.iconName) {
         this.category.iconName = this.selectedIcon;
+        isChange = true;
+      }
+      if (this.selectedColor !== this.category.color) {
+        this.category.color = this.selectedColor;
         isChange = true;
       }
       if (isChange) {
@@ -61,10 +68,13 @@ export class EditCategoryComponent implements OnInit {
   openIconListModal() {
     this.modalCtrl
       .create({
-        component: IconListComponent,
-        cssClass: 'icon-list-modal',
-        id: 'icon-list-modal',
-        componentProps: { selectedIcon: this.category.iconName },
+        component: IconCreateorComponent,
+        cssClass: 'icon-creator-modal',
+        id: 'icon-creator-modal',
+        componentProps: {
+          selectedIcon: this.category.iconName,
+          selectedColor: this.selectedColor,
+        },
       })
       .then((modalEl) => {
         modalEl.present();
@@ -73,6 +83,7 @@ export class EditCategoryComponent implements OnInit {
       .then((resData) => {
         if (resData.role === 'confirm') {
           this.selectedIcon = resData.data.selectedIcon;
+          this.selectedColor = resData.data.selectedColor;
         }
       });
   }

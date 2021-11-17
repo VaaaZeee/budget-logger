@@ -73,8 +73,7 @@ export class CategoryComponent {
             'new',
             resData.data.categoryName,
             0,
-            resData.data.iconName,
-            this.slot
+            resData.data.iconName
           );
           await this.categoryService
             .addCategoryToFireBase(newCategory)

@@ -1,6 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-import { resetUserAction } from 'src/app/core/state/user/user.actions';
 import { Category } from 'src/app/shared/models/category.model';
 
 interface ArithmeticOperation {

@@ -1,8 +1,11 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { take } from 'rxjs/operators';
 import { AuthService } from './core/services/auth/auth.service';
+import { CategoryService } from './core/services/auth/category/category.service';
 import { UserService } from './core/services/auth/user.service';
+import { Category } from './shared/models/category.model';
 import { User } from './shared/models/user.model';
 
 @Component({

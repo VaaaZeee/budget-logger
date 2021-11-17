@@ -67,8 +67,10 @@ export class LoginPage {
             )
             .pipe(
               take(1),
-              switchMap((resData) =>
-                this.userService.fetchUserByIdFromFirevase(resData.id)
+              switchMap(() =>
+                this.userService.fetchUserByEmailFromFirebase(
+                  this.loginForm.value.email
+                )
               )
             )
             .subscribe(

@@ -1,7 +1,9 @@
-export const DEFAULT_CATEGORIES: ListedCategories[] = [
-  { id: '-MoUDVe-Of9y8agLKgWo', slot: 'item-1' },
-  { id: '-MoUDsZY9__Je62thqgR', slot: 'item-2' },
-  { id: '-MoUEBivK5-2TTuI-tHc', slot: 'item-3' },
+export const DEFAULT_LISTED_CATEGORIES: ListedCategories[] = [
+  { id: '-MoeKfswIDei7Ne0nj-4', slot: 'item-1' },
+  { id: '-MoeKtprg1c9rt_GgWNa', slot: 'item-2' },
+  { id: '-MoeL27GY8Vs7zyadfG1', slot: 'item-3' },
+  { id: '-MoeLiBhZRtz4okziVbb', slot: 'item-4' },
+  { id: '-MoeN-KZFO3G-qNStfqV', slot: 'item-5' },
 ];
 
 export type GridSlot =

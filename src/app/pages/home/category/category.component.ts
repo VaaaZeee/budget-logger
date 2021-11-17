@@ -80,12 +80,6 @@ export class CategoryComponent {
             .addCategoryToFireBase(newCategory)
             .then((id) => {
               newCategory.id = id;
-              this.categoryService
-                .storeCategory(newCategory)
-                .pipe(take(1))
-                .subscribe(() => {
-                  this.isLoading.emit(false);
-                });
             });
         }
       });

@@ -17,6 +17,7 @@ import {
 import { take } from 'rxjs/operators';
 import { Alert } from 'selenium-webdriver';
 import { AuthService } from 'src/app/core/services/auth/auth.service';
+import { CategoryService } from 'src/app/core/services/auth/category/category.service';
 import { UserService } from 'src/app/core/services/auth/user.service';
 
 @Component({
@@ -35,7 +36,8 @@ export class SignupPage {
     private router: Router,
     private menuCtrl: MenuController,
     private loadingCtrl: LoadingController,
-    private alertCtrl: AlertController
+    private alertCtrl: AlertController,
+    private categoryService: CategoryService
   ) {
     this.signUpForm = new FormGroup(
       {
@@ -72,13 +74,12 @@ export class SignupPage {
     this.navCrl.navigateBack('login');
   }
 
-  //TODO set username
   signUpWithEmailAndPassword() {
     if (this.signUpForm.valid) {
       this.loadingCtrl
         .create({
           keyboardClose: true,
-          message: 'Bejelentkezés...',
+          message: 'Regisztráció...',
         })
         .then((loadingEl) => {
           this.authService
@@ -90,18 +91,27 @@ export class SignupPage {
             .subscribe(
               (user) => {
                 user.userName = this.signUpForm.value.userName;
-                this.userService.addUserDataToFirebase(user).then(() => {
-                  this.userService.storeUserData(user).then(() => {
+                this.userService
+                  .addUserDataToFirebase(user)
+                  .then(async (resData) => {
+                    user.id = resData.name;
+                    await this.categoryService.setDefaultCategoriesForNewUser(
+                      resData.name
+                    );
+                  })
+                  .then(async () => {
+                    await this.userService.storeUserData(user);
+                  })
+                  .then(() => {
                     loadingEl.dismiss();
                     this.signUpForm.reset();
                     this.router.navigateByUrl('/home');
                   });
-                });
               },
               (errRes) => {
                 loadingEl.dismiss();
                 const code = errRes.error.error.message;
-                let message = 'Bejelentkezési hiba.';
+                let message = 'Regisztrációs hiba.';
                 if (code === 'EMAIL_EXISTS') {
                   message = 'A megadott E-mail cím már foglalt!';
                 }

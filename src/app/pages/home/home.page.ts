@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuController } from '@ionic/angular';
+import { select, Store } from '@ngrx/store';
 import { take } from 'rxjs/operators';
 import { CategoryService } from 'src/app/core/services/auth/category/category.service';
+import { selectUserId } from 'src/app/core/state/user/user.selectors';
 
 @Component({
   selector: 'app-home',
@@ -19,7 +21,7 @@ export class HomePage implements OnInit {
   ngOnInit() {}
 
   ionViewWillEnter() {
-    this.categoryService.fetchListedCategories().pipe(take(1)).subscribe();
+    this.categoryService.fetchCategories().pipe(take(1)).subscribe();
   }
 
   isLoadingEvent(isLoading: boolean) {

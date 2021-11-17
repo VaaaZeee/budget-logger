@@ -4,10 +4,11 @@ import { environment } from 'src/environments/environment';
 import { map, switchMap } from 'rxjs/operators';
 import { Store } from '@ngrx/store';
 import { Storage } from '@capacitor/storage';
-import { from, Observable, of } from 'rxjs';
+import { from, Observable } from 'rxjs';
 import { User } from 'src/app/shared/models/user.model';
 import { UserService } from './user.service';
 import { resetUserAction } from '../../state/user/user.actions';
+import { CategoryService } from './category/category.service';
 
 export interface AuthResponseData {
   kind: string;
@@ -36,7 +37,7 @@ export class AuthService {
           throw new Error('No user found!');
         }
         const parsedUserData = JSON.parse(userData.value) as { userId: string };
-        return this.userService.fetchUserByIdFromFirevase(
+        return this.userService.fetchUserByIdFromFirebase(
           parsedUserData.userId
         );
       })

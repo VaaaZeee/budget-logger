@@ -1,9 +1,10 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>transaction</ion-title>
-  </ion-toolbar>
+  <ion-toolbar> </ion-toolbar>
 </ion-header>
-
 <ion-content>
-
+  <p
+    *ngFor="let transaction of transactionService.transactions$| async as transactions"
+  >
+    {{transaction.id}}
+  </p>
 </ion-content>

@@ -40,7 +40,7 @@ export class AddCategoryComponent implements OnInit {
     }
   }
 
-  openIconListModal() {
+  openIconCreatorModal() {
     this.modalCtrl
       .create({
         component: IconCreateorComponent,
@@ -48,7 +48,7 @@ export class AddCategoryComponent implements OnInit {
         id: 'icon-creator-modal',
         componentProps: {
           selectedIcon: this.selectedIcon,
-          color: this.selectedColor,
+          selectedColor: this.selectedColor,
         },
       })
       .then((modalEl) => {

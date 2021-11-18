@@ -10,6 +10,7 @@ import { StoreModule } from '@ngrx/store';
 import { userReducer } from './core/state/user/user.reducer';
 import { environment } from 'src/environments/environment';
 import { HttpClientModule } from '@angular/common/http';
+import { headerReducer } from './core/state/header/header.reducer';
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,7 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
     IonicModule.forRoot(),
     AppRoutingModule,
     HttpClientModule,
-    StoreModule.forRoot({ user: userReducer }),
+    StoreModule.forRoot({ user: userReducer, headerMode: headerReducer }),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
       logOnly: environment.production,

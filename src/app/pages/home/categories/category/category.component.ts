@@ -1,7 +1,9 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { CategoryService } from 'src/app/core/services/category/category.service';
+import { TransactionService } from 'src/app/core/services/transaction/transaction.service';
 import { Category, GridSlot } from 'src/app/shared/models/category.model';
+import { Transaction } from 'src/app/shared/models/transaction.model';
 import { AddCategoryComponent } from '../add-category/add-category.component';
 import { AddCostComponent } from '../add-cost/add-cost.component';
 import { EditCategoryComponent } from '../edit-category/edit-category.component';
@@ -20,7 +22,8 @@ export class CategoryComponent {
 
   constructor(
     private modalCtrl: ModalController,
-    private categoryService: CategoryService
+    private categoryService: CategoryService,
+    private transactionService: TransactionService
   ) {}
 
   openEditCategoryModal() {
@@ -102,6 +105,15 @@ export class CategoryComponent {
           resData.role === 'confirm' &&
           (resData.data || resData.data.newCost)
         ) {
+          const newTransaction = new Transaction(
+            'new',
+            this.category.id,
+            resData.data.newCost,
+            new Date()
+          );
+          await this.transactionService.addTransactionToFireBase(
+            newTransaction
+          );
           await this.categoryService.updateCategoryCost(
             this.category.id,
             resData.data.newCost

@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { TransactionService } from 'src/app/core/services/transaction/transaction.service';
 import { Category } from 'src/app/shared/models/category.model';
 
 interface ArithmeticOperation {
@@ -21,7 +22,6 @@ const OPREATIONS: ArithmeticOperation[] = [
 export class AddCostComponent {
   @Input() category: Category;
   @Input() currency: string;
-
   newCost = '0';
 
   constructor(private modalCtrl: ModalController) {}

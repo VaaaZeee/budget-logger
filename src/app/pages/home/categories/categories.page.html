@@ -1,22 +1,5 @@
 <ion-header>
-  <ion-toolbar class="ion-text-center">
-    <ion-buttons *ngIf="!isEditMode" slot="start" menuId="main">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-buttons *ngIf="isEditMode" slot="start">
-      <ion-button (click)="switchToEdit()">
-        <ion-icon name="arrow-back"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-    <ion-title
-      >{{isEditMode ? 'Kategóriák szerkesztése' : 'Budget Loger'}}</ion-title
-    >
-    <ion-buttons slot="primary">
-      <ion-button (click)="switchToEdit()">
-        <ion-icon name="pencil"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-  </ion-toolbar>
+  <ion-toolbar> </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-text-center">

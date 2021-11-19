@@ -1,7 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuController } from '@ionic/angular';
+import { select, Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
 import { take } from 'rxjs/operators';
 import { CategoryService } from 'src/app/core/services/category/category.service';
+import { DateState } from 'src/app/core/state/app.state';
+import {
+  decrementDateAction,
+  incrementDateAction,
+} from 'src/app/core/state/date/date.actions';
+import { selectDate } from 'src/app/core/state/date/date.selectors';
+import {
+  resetModeAction,
+  switchModeAction,
+} from 'src/app/core/state/header/header.actions';
 
 @Component({
   selector: 'app-categories',
@@ -9,20 +21,41 @@ import { CategoryService } from 'src/app/core/services/category/category.service
   styleUrls: ['./categories.page.scss'],
 })
 export class CategoriesPage implements OnInit {
-  isEditMode = false;
+  date$: Observable<DateState>;
+  isEditMode: boolean;
+
   constructor(
     public categoryService: CategoryService,
-    private menuCtrl: MenuController
-  ) {}
+    private menuCtrl: MenuController,
+    private store: Store
+  ) {
+    this.date$ = this.store.pipe(select(selectDate));
+  }
+
+  ionViewWillEnter() {
+    this.categoryService.fetchListedCategories().pipe(take(1)).subscribe();
+  }
 
   ngOnInit() {}
 
   switchToEdit() {
-    this.menuCtrl.enable(this.isEditMode, 'main');
     this.isEditMode = !this.isEditMode;
+    if (this.isEditMode) {
+      this.store.dispatch(switchModeAction({ mode: 'edit' }));
+    } else {
+      this.store.dispatch(resetModeAction());
+    }
   }
 
-  ionViewWillEnter() {
-    this.categoryService.fetchCategories().pipe(take(1)).subscribe();
+  onOpenMenu() {
+    this.menuCtrl.toggle('main');
+  }
+
+  nextMounth() {
+    this.store.dispatch(incrementDateAction());
+  }
+
+  previousMounth() {
+    this.store.dispatch(decrementDateAction());
   }
 }

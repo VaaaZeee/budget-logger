@@ -1,9 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { select, Store } from '@ngrx/store';
-import { BehaviorSubject, Observable } from 'rxjs';
-import { map, switchMap, take } from 'rxjs/operators';
+import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
+import { last, map, switchMap, take, tap } from 'rxjs/operators';
 import { Transaction } from 'src/app/shared/models/transaction.model';
+import { selectSelectedDate } from '../../state/date/date.selectors';
 import { selectUserId } from '../../state/user/user.selectors';
 
 interface TransactionData {
@@ -16,7 +17,13 @@ interface TransactionData {
 })
 export class TransactionService {
   private transactions = new BehaviorSubject<Transaction[]>([]);
+  private listedTransactions = new BehaviorSubject<Transaction[]>([]);
   private userId$: Observable<string>;
+  private date$: Observable<Date>;
+
+  get listedTransactions$() {
+    return this.listedTransactions.asObservable();
+  }
 
   get transactions$() {
     return this.transactions.asObservable();
@@ -24,6 +31,7 @@ export class TransactionService {
 
   constructor(private http: HttpClient, private store: Store) {
     this.userId$ = this.store.pipe(select(selectUserId));
+    this.date$ = this.store.pipe(select(selectSelectedDate));
   }
 
   addTransactionToFireBase(newTransaction: Transaction): Promise<string> {
@@ -97,6 +105,25 @@ export class TransactionService {
             transactionData.date
           )
       )
+    );
+  }
+
+  getTransactionsInSelectedMounth(): Observable<Transaction[]> {
+    return combineLatest([this.date$, this.transactions$]).pipe(
+      map(([lastDate, transactions]) =>
+        transactions.filter((transaction) => {
+          const firstDate = new Date(
+            lastDate.getFullYear(),
+            lastDate.getMonth(),
+            1
+          );
+          const transactionDate = new Date(transaction.date);
+          return firstDate <= transactionDate && transactionDate <= lastDate;
+        })
+      ),
+      tap((listedTransactions) => {
+        this.listedTransactions.next(listedTransactions);
+      })
     );
   }
 }

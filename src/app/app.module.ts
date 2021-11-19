@@ -11,6 +11,9 @@ import { userReducer } from './core/state/user/user.reducer';
 import { environment } from 'src/environments/environment';
 import { HttpClientModule } from '@angular/common/http';
 import { headerReducer } from './core/state/header/header.reducer';
+import { dateReducer } from './core/state/date/date.reducer';
+import { EffectsModule } from '@ngrx/effects';
+import { DateEffects } from './core/state/date/date.effects';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,7 +23,12 @@ import { headerReducer } from './core/state/header/header.reducer';
     IonicModule.forRoot(),
     AppRoutingModule,
     HttpClientModule,
-    StoreModule.forRoot({ user: userReducer, headerMode: headerReducer }),
+    EffectsModule.forRoot([DateEffects]),
+    StoreModule.forRoot({
+      user: userReducer,
+      headerMode: headerReducer,
+      date: dateReducer,
+    }),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
       logOnly: environment.production,

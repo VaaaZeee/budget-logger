@@ -18,6 +18,7 @@ export class CategoryComponent {
   @Input() slot: GridSlot;
   @Input() currency = 'Ft ';
   @Input() isEditMode: boolean;
+  @Input() disabled = false;
   @Output() isLoading = new EventEmitter<boolean>();
 
   constructor(

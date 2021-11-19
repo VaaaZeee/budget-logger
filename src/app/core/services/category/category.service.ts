@@ -1,10 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { select, Store } from '@ngrx/store';
-import { BehaviorSubject, Observable, of } from 'rxjs';
+import { BehaviorSubject, combineLatest, Observable, of } from 'rxjs';
 import { map, switchMap, take, tap } from 'rxjs/operators';
 import { selectUserId } from 'src/app/core/state/user/user.selectors';
 import { Category } from 'src/app/shared/models/category.model';
+import { Transaction } from 'src/app/shared/models/transaction.model';
+import { TransactionService } from '../transaction/transaction.service';
 
 interface CategoryData {
   name: string;
@@ -17,14 +19,23 @@ interface CategoryData {
   providedIn: 'root',
 })
 export class CategoryService {
+  private listedCategories = new BehaviorSubject<Category[]>([]);
   private categories = new BehaviorSubject<Category[]>([]);
   private userId$: Observable<string>;
+
+  get listedCategories$() {
+    return this.listedCategories.asObservable();
+  }
 
   get categories$() {
     return this.categories.asObservable();
   }
 
-  constructor(private http: HttpClient, private store: Store) {
+  constructor(
+    private http: HttpClient,
+    private store: Store,
+    private transactionService: TransactionService
+  ) {
     this.userId$ = this.store.pipe(select(selectUserId));
   }
 
@@ -245,5 +256,28 @@ export class CategoryService {
         })
       )
       .toPromise();
+  }
+
+  fetchListedCategories(): Observable<Category[]> {
+    return combineLatest([
+      this.transactionService.listedTransactions$,
+      this.categories$,
+    ]).pipe(
+      map(([transactions, categories]) => {
+        const listedCategories: Category[] = [];
+        categories.forEach((category) => {
+          const categoryTransactions = transactions.filter(
+            (transaction) => transaction.categoryId === category.id
+          );
+          let sumCost = 0;
+          categoryTransactions.forEach(
+            (transaction) => (sumCost += transaction.spent)
+          );
+          listedCategories.push({ ...category, spent: sumCost });
+        });
+        this.listedCategories.next(listedCategories);
+        return listedCategories;
+      })
+    );
   }
 }

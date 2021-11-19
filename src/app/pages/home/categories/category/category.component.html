@@ -1,22 +1,36 @@
-<ng-container *ngIf="category; else addCategory">
+<ng-container *ngIf="!disabled; else disabledCategory">
+  <ng-container *ngIf="category; else addCategory">
+    <div class="item">
+      <ion-label [innerText]="category.name"></ion-label>
+      <ion-icon
+        (click)="isEditMode ? openEditCategoryModal() : openAddCostModal()"
+        [name]="category.iconName"
+        [style.background-color]="category.color"
+      ></ion-icon>
+      <ion-label [style.color]="category.color" class="spent">{{
+        category.spent | currency: currency:"symbol":"1.0-0"
+      }}</ion-label>
+    </div>
+  </ng-container>
+  <ng-template #addCategory>
+    <div class="item">
+      <ion-icon
+        class="addCategory"
+        (click)="openAddCategoryModal()"
+        name="add"
+      ></ion-icon>
+    </div>
+  </ng-template>
+</ng-container>
+<ng-template #disabledCategory>
   <div class="item">
     <ion-label [innerText]="category.name"></ion-label>
     <ion-icon
-      (click)="isEditMode ? openEditCategoryModal() : openAddCostModal()"
       [name]="category.iconName"
       [style.background-color]="category.color"
     ></ion-icon>
     <ion-label [style.color]="category.color" class="spent">{{
       category.spent | currency: currency:"symbol":"1.0-0"
     }}</ion-label>
-  </div>
-</ng-container>
-<ng-template #addCategory>
-  <div class="item">
-    <ion-icon
-      class="addCategory"
-      (click)="openAddCategoryModal()"
-      name="add"
-    ></ion-icon>
   </div>
 </ng-template>

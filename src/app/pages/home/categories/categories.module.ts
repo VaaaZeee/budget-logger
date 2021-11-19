@@ -14,6 +14,7 @@ import { AddCostComponent } from './add-cost/add-cost.component';
 import { AddCategoryComponent } from './add-category/add-category.component';
 import { EditCategoryComponent } from './edit-category/edit-category.component';
 import { IconCreateorModule } from 'src/app/shared/icon-createor/icon-createor.module';
+import { CompareDatesPipeModule } from 'src/app/shared/pipes/compare/compare-dates-pipe.module';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { IconCreateorModule } from 'src/app/shared/icon-createor/icon-createor.m
     IonicModule,
     CastToGridSlotPipeModule,
     IconCreateorModule,
+    CompareDatesPipeModule,
     NgCircleProgressModule.forRoot({
       radius: 60,
       space: -10,

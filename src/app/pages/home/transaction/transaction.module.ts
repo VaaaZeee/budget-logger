@@ -7,14 +7,16 @@ import { IonicModule } from '@ionic/angular';
 import { TransactionPageRoutingModule } from './transaction-routing.module';
 
 import { TransactionPage } from './transaction.page';
+import { CompareDatesPipeModule } from 'src/app/shared/pipes/compare/compare-dates-pipe.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    TransactionPageRoutingModule
+    CompareDatesPipeModule,
+    TransactionPageRoutingModule,
   ],
-  declarations: [TransactionPage]
+  declarations: [TransactionPage],
 })
 export class TransactionPageModule {}

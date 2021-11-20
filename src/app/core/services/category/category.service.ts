@@ -42,7 +42,7 @@ export class CategoryService {
   setDefaultCategoriesForNewUser(userId: string) {
     return this.http
       .get<{ [key: string]: Category }>(
-        `https://budget-loger-default-rtdb.europe-west1.firebasedatabase.app/default-categories.json`
+        `https://budget-logger-a26a2-default-rtdb.europe-west1.firebasedatabase.app/default-categories.json`
       )
       .pipe(
         take(1),
@@ -68,7 +68,7 @@ export class CategoryService {
             defaultCategories.map(async (category) => {
               await this.http
                 .post<{ name: string }>(
-                  `https://budget-loger-default-rtdb.europe-west1.firebasedatabase.app/users/${userId}/categories.json`,
+                  `https://budget-logger-a26a2-default-rtdb.europe-west1.firebasedatabase.app/users/${userId}/categories.json`,
                   { ...category, id: null }
                 )
                 .toPromise();
@@ -84,7 +84,7 @@ export class CategoryService {
       take(1),
       switchMap((userId) =>
         this.http.get<{ [key: string]: Category }>(
-          `https://budget-loger-default-rtdb.europe-west1.firebasedatabase.app/users/${userId}/categories.json`
+          `https://budget-logger-a26a2-default-rtdb.europe-west1.firebasedatabase.app/users/${userId}/categories.json`
         )
       ),
       take(1),
@@ -117,7 +117,7 @@ export class CategoryService {
         take(1),
         switchMap((userId) =>
           this.http.post<{ name: string }>(
-            `https://budget-loger-default-rtdb.europe-west1.firebasedatabase.app/users/${userId}/categories.json`,
+            `https://budget-logger-a26a2-default-rtdb.europe-west1.firebasedatabase.app/users/${userId}/categories.json`,
             { ...newCategory, id: null }
           )
         ),
@@ -140,7 +140,7 @@ export class CategoryService {
       take(1),
       switchMap((userId) =>
         this.http.get<CategoryData>(
-          `https://budget-loger-default-rtdb.europe-west1.firebasedatabase.app/users/${userId}/categories/${id}.json`
+          `https://budget-logger-a26a2-default-rtdb.europe-west1.firebasedatabase.app/users/${userId}/categories/${id}.json`
         )
       ),
       map(
@@ -188,7 +188,7 @@ export class CategoryService {
             category.archived
           );
           return this.http.put(
-            `https://budget-loger-default-rtdb.europe-west1.firebasedatabase.app/users/${userId}/categories/${category.id}.json`,
+            `https://budget-logger-a26a2-default-rtdb.europe-west1.firebasedatabase.app/users/${userId}/categories/${category.id}.json`,
             { ...updatedCategories[updatedCategoriesIndex], id: null }
           );
         }),
@@ -232,7 +232,7 @@ export class CategoryService {
             oldCategory.archived
           );
           return this.http.put(
-            `https://budget-loger-default-rtdb.europe-west1.firebasedatabase.app/users/${userId}/categories/${categoryId}.json`,
+            `https://budget-logger-a26a2-default-rtdb.europe-west1.firebasedatabase.app/users/${userId}/categories/${categoryId}.json`,
             { ...updatedCategories[updatedCategoriesIndex], id: null }
           );
         }),
@@ -249,7 +249,7 @@ export class CategoryService {
         take(1),
         switchMap((userId) =>
           this.http.delete(
-            `https://budget-loger-default-rtdb.europe-west1.firebasedatabase.app/users/${userId}/categories/${categoryId}.json`
+            `https://budget-logger-a26a2-default-rtdb.europe-west1.firebasedatabase.app/users/${userId}/categories/${categoryId}.json`
           )
         ),
         switchMap(() => this.categories$),

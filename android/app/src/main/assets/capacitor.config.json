@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "budget-logger",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

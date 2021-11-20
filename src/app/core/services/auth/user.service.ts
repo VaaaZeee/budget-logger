@@ -26,7 +26,7 @@ export class UserService {
   addUserDataToFirebase(user: User): Promise<{ name: string }> {
     return this.http
       .post<{ name: string }>(
-        'https://budget-loger-default-rtdb.europe-west1.firebasedatabase.app/users.json',
+        'https://budget-logger-a26a2-default-rtdb.europe-west1.firebasedatabase.app/users.json',
         { ...user, id: null }
       )
       .toPromise();
@@ -35,7 +35,7 @@ export class UserService {
   fetchUserByIdFromFirebase(id: string): Observable<User> {
     return this.http
       .get<UserResponseData>(
-        `https://budget-loger-default-rtdb.europe-west1.firebasedatabase.app/users/${id}.json`
+        `https://budget-logger-a26a2-default-rtdb.europe-west1.firebasedatabase.app/users/${id}.json`
       )
       .pipe(map((user) => new User(id, user.email, user.userName)));
   }
@@ -43,7 +43,7 @@ export class UserService {
   fetchUserByEmailFromFirebase(email: string): Observable<User> {
     return this.http
       .get<{ [key: string]: UserResponseData }>(
-        `https://budget-loger-default-rtdb.europe-west1.firebasedatabase.app/users.json?orderBy="email"&equalTo="${email}"`
+        `https://budget-logger-a26a2-default-rtdb.europe-west1.firebasedatabase.app/users.json?orderBy="email"&equalTo="${email}"`
       )
       .pipe(
         map((user) => {

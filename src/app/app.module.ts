@@ -16,6 +16,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { DateEffects } from './core/state/date/date.effects';
 import { DatePipe, registerLocaleData } from '@angular/common';
 import localeHu from '@angular/common/locales/hu';
+import { ServiceWorkerModule } from '@angular/service-worker';
 registerLocaleData(localeHu);
 
 @NgModule({
@@ -36,6 +37,12 @@ registerLocaleData(localeHu);
       maxAge: 25,
       logOnly: environment.production,
       autoPause: true,
+    }),
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the app is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
     }),
   ],
   providers: [

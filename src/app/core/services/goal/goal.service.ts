@@ -44,7 +44,7 @@ export class GoalService {
           const mounth = this.datePipe.transform(date.selectedDate, 'yyyy-MM');
           newGoal = new Goal(mounth, goal);
           return this.http.put<{ name: string }>(
-            `https://budget-loger-default-rtdb.europe-west1.firebasedatabase.app/users/${userId}/goals/${mounth}.json`,
+            `https://budget-logger-a26a2-default-rtdb.europe-west1.firebasedatabase.app/users/${userId}/goals/${mounth}.json`,
             {
               ...newGoal,
               mounth: null,
@@ -65,7 +65,7 @@ export class GoalService {
       switchMap(([userId, date]) => {
         dateState = date;
         return this.http.get<{ [key: string]: { goal: number } }>(
-          `https://budget-loger-default-rtdb.europe-west1.firebasedatabase.app/users/${userId}/goals.json`
+          `https://budget-logger-a26a2-default-rtdb.europe-west1.firebasedatabase.app/users/${userId}/goals.json`
         );
       }),
       take(1),

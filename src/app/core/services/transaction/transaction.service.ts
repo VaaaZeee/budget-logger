@@ -42,7 +42,7 @@ export class TransactionService {
         take(1),
         switchMap((userId) =>
           this.http.post<{ name: string }>(
-            `https://budget-loger-default-rtdb.europe-west1.firebasedatabase.app/users/${userId}/transactions.json`,
+            `https://budget-logger-a26a2-default-rtdb.europe-west1.firebasedatabase.app/users/${userId}/transactions.json`,
             {
               ...newTransaction,
               id: null,
@@ -69,7 +69,7 @@ export class TransactionService {
       take(1),
       switchMap((userId) =>
         this.http.get<{ [key: string]: Transaction }>(
-          `https://budget-loger-default-rtdb.europe-west1.firebasedatabase.app/users/${userId}/transactions.json`
+          `https://budget-logger-a26a2-default-rtdb.europe-west1.firebasedatabase.app/users/${userId}/transactions.json`
         )
       ),
       take(1),
@@ -101,7 +101,7 @@ export class TransactionService {
       take(1),
       switchMap((userId) =>
         this.http.get<TransactionData>(
-          `https://budget-loger-default-rtdb.europe-west1.firebasedatabase.app/users/${userId}/transactions/${id}.json`
+          `https://budget-logger-a26a2-default-rtdb.europe-west1.firebasedatabase.app/users/${userId}/transactions/${id}.json`
         )
       ),
       map(
@@ -141,7 +141,7 @@ export class TransactionService {
         take(1),
         switchMap((userId) =>
           this.http.delete(
-            `https://budget-loger-default-rtdb.europe-west1.firebasedatabase.app/users/${userId}/transactions/${transactionId}.json`
+            `https://budget-logger-a26a2-default-rtdb.europe-west1.firebasedatabase.app/users/${userId}/transactions/${transactionId}.json`
           )
         ),
         switchMap(() => this.transactions$),

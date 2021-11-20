@@ -109,7 +109,7 @@ export class CategoryComponent {
           const newTransaction = new Transaction(
             'new',
             this.category.id,
-            resData.data.newCost,
+            -resData.data.newCost,
             new Date()
           );
           await this.transactionService.addTransactionToFireBase(

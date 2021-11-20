@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 
@@ -14,6 +14,9 @@ import { headerReducer } from './core/state/header/header.reducer';
 import { dateReducer } from './core/state/date/date.reducer';
 import { EffectsModule } from '@ngrx/effects';
 import { DateEffects } from './core/state/date/date.effects';
+import { registerLocaleData } from '@angular/common';
+import localeHu from '@angular/common/locales/hu';
+registerLocaleData(localeHu);
 
 @NgModule({
   declarations: [AppComponent],
@@ -35,7 +38,10 @@ import { DateEffects } from './core/state/date/date.effects';
       autoPause: true,
     }),
   ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    { provide: LOCALE_ID, useValue: 'hu' },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

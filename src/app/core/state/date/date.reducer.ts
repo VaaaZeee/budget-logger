@@ -5,7 +5,9 @@ import {
   setDateAction,
 } from './date.actions';
 
-const initialState = null;
+const dat = new Date();
+const initDate = new Date(dat.getFullYear(), dat.getMonth() + 1, 0);
+const initialState = { currentDate: initDate, selectedDate: initDate };
 
 export const dateReducer = createReducer(
   initialState,

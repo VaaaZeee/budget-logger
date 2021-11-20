@@ -16,10 +16,10 @@ const routes: Routes = [
           ),
       },
       {
-        path: 'transaction',
+        path: 'transactions',
         loadChildren: () =>
-          import('./transaction/transaction.module').then(
-            (m) => m.TransactionPageModule
+          import('./transactions/transactions.module').then(
+            (m) => m.TransactionsPageModule
           ),
       },
       {

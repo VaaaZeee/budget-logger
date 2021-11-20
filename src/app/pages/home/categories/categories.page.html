@@ -1,7 +1,7 @@
 <ng-container *ngIf="date$ | async as date">
   <ion-header>
     <ion-toolbar
-      [color]="(date.currentDate | compareDates : date.selectedDate) ? 'primary' : 'light'"
+      [color]="(date.currentDate | isEqualDates : date.selectedDate) ? 'primary' : 'light'"
       class="ion-text-center"
     >
       <ion-grid>
@@ -36,7 +36,7 @@
             <ion-text>
               <span>{{ date.selectedDate | date:'yyyy LLLL ' }}</span>
               <span
-                [style.color]="(date.currentDate | compareDates : date.selectedDate) ? '#0ea70e' : '#222428'"
+                [style.color]="(date.currentDate | isEqualDates : date.selectedDate) ? '#0ea70e' : '#222428'"
                 class="day"
                 >{{ date.selectedDate | date:'dd'}}</span
               >
@@ -58,7 +58,7 @@
         <ng-container *ngFor="let category of categories">
           <div class="grid">
             <app-category
-              [disabled]="!(date.currentDate | compareDates : date.selectedDate)"
+              [disabled]="!(date.currentDate | isEqualDates : date.selectedDate)"
               [category]="category"
               [isEditMode]="isEditMode"
             ></app-category>

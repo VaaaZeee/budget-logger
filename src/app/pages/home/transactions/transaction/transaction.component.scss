@@ -1,0 +1,25 @@
+$icon-background: #3ae96f;
+$icon-active-background: #79e79a;
+
+.item {
+  ion-col {
+    margin: auto;
+  }
+}
+
+ion-item {
+  margin: 0;
+}
+
+.name {
+  margin-left: 8px;
+}
+
+ion-icon {
+  font-size: 2rem;
+  border-radius: 50%;
+  padding: 0.75rem;
+  margin: 0;
+
+  background-color: $icon-background;
+}

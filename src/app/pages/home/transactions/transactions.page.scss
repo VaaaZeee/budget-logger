@@ -1,0 +1,64 @@
+.day {
+  background-color: var(--ion-color-primary-contrast);
+  color: transparent;
+  padding: 2px;
+  border-radius: 4px;
+}
+
+.date {
+  ion-icon {
+    font-size: 1.2rem;
+  }
+}
+
+ion-content {
+  ion-col {
+    padding: 0;
+  }
+}
+
+.frist-of-day {
+  margin-top: 1rem;
+  ion-col {
+    padding: 0;
+    margin: auto;
+
+    .container {
+      text-transform: uppercase;
+      display: grid;
+      grid-auto-columns: 1fr;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
+      gap: 0px 0px;
+      grid-template-areas:
+        "day-of-the-week"
+        "mounth-year";
+      justify-content: stretch;
+      justify-items: stretch;
+      align-items: stretch;
+      margin-left: 8px;
+    }
+    .day-of-the-week {
+      justify-self: start;
+      align-self: center;
+      grid-area: day-of-the-week;
+    }
+    .mounth-year {
+      justify-self: start;
+      align-self: center;
+      grid-area: mounth-year;
+    }
+  }
+
+  .date-day {
+    font-size: 2rem;
+  }
+}
+
+ion-toolbar {
+  font-weight: bold;
+  align-self: center;
+  ion-icon {
+    font-size: 1.5rem;
+  }
+}

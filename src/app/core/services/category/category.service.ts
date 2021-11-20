@@ -273,7 +273,7 @@ export class CategoryService {
           categoryTransactions.forEach(
             (transaction) => (sumCost += transaction.spent)
           );
-          listedCategories.push({ ...category, spent: sumCost });
+          listedCategories.push({ ...category, spent: -sumCost });
         });
         this.listedCategories.next(listedCategories);
         return listedCategories;

@@ -2,8 +2,9 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
-import { last, map, switchMap, take, tap } from 'rxjs/operators';
+import { map, switchMap, take, tap } from 'rxjs/operators';
 import { Transaction } from 'src/app/shared/models/transaction.model';
+import { compareDates } from 'src/app/shared/utils/date.utils';
 import { selectSelectedDate } from '../../state/date/date.selectors';
 import { selectUserId } from '../../state/user/user.selectors';
 
@@ -42,7 +43,11 @@ export class TransactionService {
         switchMap((userId) =>
           this.http.post<{ name: string }>(
             `https://budget-loger-default-rtdb.europe-west1.firebasedatabase.app/users/${userId}/transactions.json`,
-            { ...newTransaction, id: null }
+            {
+              ...newTransaction,
+              id: null,
+              date: newTransaction.date.toISOString(),
+            }
           )
         ),
         switchMap((resData) => {
@@ -69,7 +74,7 @@ export class TransactionService {
       ),
       take(1),
       map((resData) => {
-        const transactions: Transaction[] = [];
+        let transactions: Transaction[] = [];
         for (const key in resData) {
           if (resData.hasOwnProperty(key)) {
             transactions.push(
@@ -77,11 +82,14 @@ export class TransactionService {
                 key,
                 resData[key].categoryId,
                 resData[key].spent,
-                resData[key].date
+                new Date(resData[key].date)
               )
             );
           }
         }
+        transactions = transactions.sort((a: Transaction, b: Transaction) =>
+          compareDates(a.date, b.date)
+        );
         this.transactions.next(transactions);
         return transactions;
       })
@@ -102,7 +110,7 @@ export class TransactionService {
             id,
             transactionData.categoryId,
             transactionData.spent,
-            transactionData.date
+            new Date(transactionData.date)
           )
       )
     );

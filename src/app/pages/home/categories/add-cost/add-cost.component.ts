@@ -34,7 +34,7 @@ export class AddCostComponent {
     if (this.isCalculated()) {
       this.modalCtrl.dismiss(
         {
-          newCost: +this.newCost,
+          newCost: this.newCost,
         },
         'confirm',
         'add-cost-modal'

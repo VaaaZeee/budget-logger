@@ -18,6 +18,7 @@ export class Category {
     public name: string,
     public spent: number,
     public iconName: string,
-    public color: string
+    public color: string,
+    public archived: boolean
   ) {}
 }

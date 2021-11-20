@@ -65,6 +65,10 @@ export class EditCategoryComponent implements OnInit {
     this.modalCtrl.dismiss(null, 'delete', 'update-category-modal');
   }
 
+  arhiveCategory() {
+    this.modalCtrl.dismiss(null, 'archive', 'update-category-modal');
+  }
+
   openIconListModal() {
     this.modalCtrl
       .create({

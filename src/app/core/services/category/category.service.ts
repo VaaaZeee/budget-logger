@@ -5,7 +5,6 @@ import { BehaviorSubject, combineLatest, Observable, of } from 'rxjs';
 import { map, switchMap, take, tap } from 'rxjs/operators';
 import { selectUserId } from 'src/app/core/state/user/user.selectors';
 import { Category } from 'src/app/shared/models/category.model';
-import { Transaction } from 'src/app/shared/models/transaction.model';
 import { TransactionService } from '../transaction/transaction.service';
 
 interface CategoryData {
@@ -13,6 +12,7 @@ interface CategoryData {
   spent: number;
   iconName: string;
   color: string;
+  archived: boolean;
 }
 
 @Injectable({
@@ -55,7 +55,8 @@ export class CategoryService {
                 resData[key].name,
                 resData[key].spent,
                 resData[key].iconName,
-                resData[key].color
+                resData[key].color,
+                resData[key].archived
               );
               defaultCategories.push(category);
             }
@@ -97,7 +98,8 @@ export class CategoryService {
                 resData[key].name,
                 resData[key].spent,
                 resData[key].iconName,
-                resData[key].color
+                resData[key].color,
+                resData[key].archived
               )
             );
           }
@@ -148,7 +150,8 @@ export class CategoryService {
             categoryData.name,
             categoryData.spent,
             categoryData.iconName,
-            categoryData.color
+            categoryData.color,
+            categoryData.archived
           )
       )
     );
@@ -181,13 +184,15 @@ export class CategoryService {
             category.name,
             oldCategory.spent,
             category.iconName,
-            category.color
+            category.color,
+            category.archived
           );
           return this.http.put(
             `https://budget-loger-default-rtdb.europe-west1.firebasedatabase.app/users/${userId}/categories/${category.id}.json`,
             { ...updatedCategories[updatedCategoriesIndex], id: null }
           );
         }),
+        take(1),
         tap(() => {
           this.categories.next(updatedCategories);
         })
@@ -223,7 +228,8 @@ export class CategoryService {
             oldCategory.name,
             oldCategory.spent + cost,
             oldCategory.iconName,
-            oldCategory.color
+            oldCategory.color,
+            oldCategory.archived
           );
           return this.http.put(
             `https://budget-loger-default-rtdb.europe-west1.firebasedatabase.app/users/${userId}/categories/${categoryId}.json`,
@@ -266,14 +272,16 @@ export class CategoryService {
       map(([transactions, categories]) => {
         const listedCategories: Category[] = [];
         categories.forEach((category) => {
-          const categoryTransactions = transactions.filter(
-            (transaction) => transaction.categoryId === category.id
-          );
-          let sumCost = 0;
-          categoryTransactions.forEach(
-            (transaction) => (sumCost += transaction.spent)
-          );
-          listedCategories.push({ ...category, spent: -sumCost });
+          if (!category.archived) {
+            const categoryTransactions = transactions.filter(
+              (transaction) => transaction.categoryId === category.id
+            );
+            let sumCost = 0;
+            categoryTransactions.forEach(
+              (transaction) => (sumCost += transaction.spent)
+            );
+            listedCategories.push({ ...category, spent: -sumCost });
+          }
         });
         this.listedCategories.next(listedCategories);
         return listedCategories;

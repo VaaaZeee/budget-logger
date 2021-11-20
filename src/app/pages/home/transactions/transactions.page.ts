@@ -43,7 +43,7 @@ export class TransactionsPage {
     this.displayedData$ = combineLatest([
       this.store.pipe(select(selectDate)),
       this.transactionService.listedTransactions$,
-      this.categoryService.listedCategories$,
+      this.categoryService.categories$,
     ]).pipe(
       map(([date, transactions, categories]) => {
         const data: Data[] = [];

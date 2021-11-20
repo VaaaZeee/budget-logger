@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { LoadingController, ModalController } from '@ionic/angular';
 import { CategoryService } from 'src/app/core/services/category/category.service';
 import { TransactionService } from 'src/app/core/services/transaction/transaction.service';
 import { Category, GridSlot } from 'src/app/shared/models/category.model';
@@ -27,8 +27,8 @@ export class CategoryComponent {
     private transactionService: TransactionService
   ) {}
 
-  openEditCategoryModal() {
-    this.modalCtrl
+  async openEditCategoryModal() {
+    await this.modalCtrl
       .create({
         component: EditCategoryComponent,
         cssClass: 'update-category-modal',
@@ -50,17 +50,29 @@ export class CategoryComponent {
               resData.data.updatedCategory.name,
               this.category.spent,
               resData.data.updatedCategory.iconName,
-              resData.data.updatedCategory.color
+              resData.data.updatedCategory.color,
+              resData.data.archived
             )
           );
         } else if (resData.role === 'delete') {
           await this.categoryService.deleteCategory(this.category.id);
+        } else if (resData.role === 'archive') {
+          await this.categoryService.updateCategory(
+            new Category(
+              this.category.id,
+              this.category.name + ' (Archivált)',
+              this.category.spent,
+              this.category.iconName,
+              this.category.color,
+              true
+            )
+          );
         }
       });
   }
 
-  openAddCategoryModal() {
-    this.modalCtrl
+  async openAddCategoryModal() {
+    await this.modalCtrl
       .create({
         component: AddCategoryComponent,
         cssClass: 'add-category-modal',
@@ -78,7 +90,8 @@ export class CategoryComponent {
             resData.data.categoryName,
             0,
             resData.data.iconName,
-            resData.data.color
+            resData.data.color,
+            false
           );
           await this.categoryService
             .addCategoryToFireBase(newCategory)
@@ -89,8 +102,8 @@ export class CategoryComponent {
       });
   }
 
-  openAddCostModal() {
-    this.modalCtrl
+  async openAddCostModal() {
+    await this.modalCtrl
       .create({
         component: AddCostComponent,
         cssClass: 'add-cost-modal',

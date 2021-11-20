@@ -14,7 +14,7 @@ import { headerReducer } from './core/state/header/header.reducer';
 import { dateReducer } from './core/state/date/date.reducer';
 import { EffectsModule } from '@ngrx/effects';
 import { DateEffects } from './core/state/date/date.effects';
-import { registerLocaleData } from '@angular/common';
+import { DatePipe, registerLocaleData } from '@angular/common';
 import localeHu from '@angular/common/locales/hu';
 registerLocaleData(localeHu);
 
@@ -41,6 +41,7 @@ registerLocaleData(localeHu);
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     { provide: LOCALE_ID, useValue: 'hu' },
+    DatePipe,
   ],
   bootstrap: [AppComponent],
 })

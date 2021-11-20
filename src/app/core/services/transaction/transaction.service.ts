@@ -134,4 +134,25 @@ export class TransactionService {
       })
     );
   }
+
+  async deleteTransaction(transactionId: string): Promise<void> {
+    this.userId$
+      .pipe(
+        take(1),
+        switchMap((userId) =>
+          this.http.delete(
+            `https://budget-loger-default-rtdb.europe-west1.firebasedatabase.app/users/${userId}/transactions/${transactionId}.json`
+          )
+        ),
+        switchMap(() => this.transactions$),
+        take(1),
+        tap((listedTransactions) => {
+          const filteredTransactions = listedTransactions.filter(
+            (tansaction) => tansaction.id !== transactionId
+          );
+          this.transactions.next(filteredTransactions);
+        })
+      )
+      .toPromise();
+  }
 }

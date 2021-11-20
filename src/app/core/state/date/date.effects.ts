@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { map, mergeMap, take } from 'rxjs/operators';
 import { CategoryService } from '../../services/category/category.service';
+import { GoalService } from '../../services/goal/goal.service';
 import { TransactionService } from '../../services/transaction/transaction.service';
 import {
   decrementDateAction,
@@ -20,7 +21,8 @@ export class DateEffects {
         mergeMap(() =>
           this.transactionService.getTransactionsInSelectedMounth()
         ),
-        mergeMap(() => this.categoryService.fetchListedCategories())
+        mergeMap(() => this.categoryService.fetchListedCategories()),
+        mergeMap(() => this.goalService.fetchGoalsFromFirebase())
       ),
     { dispatch: false }
   );
@@ -38,6 +40,7 @@ export class DateEffects {
             .fetchListedCategories()
             .pipe(take(1))
             .subscribe();
+          this.goalService.fetchGoal().pipe(take(1)).subscribe();
         })
       ),
     { dispatch: false }
@@ -56,6 +59,7 @@ export class DateEffects {
             .fetchListedCategories()
             .pipe(take(1))
             .subscribe();
+          this.goalService.fetchGoal().pipe(take(1)).subscribe();
         })
       ),
     { dispatch: false }
@@ -64,6 +68,7 @@ export class DateEffects {
   constructor(
     private actions$: Actions,
     private transactionService: TransactionService,
-    private categoryService: CategoryService
+    private categoryService: CategoryService,
+    private goalService: GoalService
   ) {}
 }

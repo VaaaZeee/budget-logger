@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MenuController } from '@ionic/angular';
+import { MenuController, ToastController } from '@ionic/angular';
 import { select, Store } from '@ngrx/store';
 import { combineLatest, Observable } from 'rxjs';
 import { filter, map, take } from 'rxjs/operators';
@@ -37,7 +37,8 @@ export class TransactionsPage {
     private transactionService: TransactionService,
     private categoryService: CategoryService,
     private store: Store,
-    private menuCtrl: MenuController
+    private menuCtrl: MenuController,
+    private toastCtrl: ToastController
   ) {
     this.displayedData$ = combineLatest([
       this.store.pipe(select(selectDate)),
@@ -81,6 +82,10 @@ export class TransactionsPage {
     );
   }
 
+  async deleteTransaction(id: string) {
+    await this.transactionService.deleteTransaction(id);
+  }
+
   ionViewWillEnter() {
     this.transactionService
       .getTransactionsInSelectedMounth()
@@ -98,5 +103,21 @@ export class TransactionsPage {
 
   previousMounth() {
     this.store.dispatch(decrementDateAction());
+  }
+
+  async notImplementedYet() {
+    const toast = await this.toastCtrl.create({
+      header: 'Info',
+      message: 'Még nem implementáltam a funkciót',
+      position: 'top',
+      buttons: [
+        {
+          text: 'Done',
+          role: 'cancel',
+        },
+      ],
+    });
+    await toast.present();
+    await toast.onDidDismiss();
   }
 }

@@ -15,6 +15,7 @@ import { AddCategoryComponent } from './add-category/add-category.component';
 import { EditCategoryComponent } from './edit-category/edit-category.component';
 import { IconCreateorModule } from 'src/app/shared/icon-createor/icon-createor.module';
 import { IsEqualDatesPipeModule } from 'src/app/shared/pipes/compare/dates/is-equal-dates-pipe.module';
+import { SetMounthlyGoalComponent } from './set-mounthly-goal/set-mounthly-goal.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { IsEqualDatesPipeModule } from 'src/app/shared/pipes/compare/dates/is-eq
     AddCostComponent,
     AddCategoryComponent,
     EditCategoryComponent,
+    SetMounthlyGoalComponent,
   ],
   imports: [
     CommonModule,
@@ -41,7 +43,7 @@ import { IsEqualDatesPipeModule } from 'src/app/shared/pipes/compare/dates/is-eq
       outerStrokeGradientStopColor: '#6cff0a',
       innerStrokeColor: '#e7e8ea',
       innerStrokeWidth: 10,
-      title: 'UI',
+      title: 'Cél',
       titleFontSize: '32',
       subtitleFontSize: '16',
       titleColor: '#fff',

@@ -1,86 +1,102 @@
 <ng-container *ngIf="date$ | async as date">
-  <ion-header>
-    <ion-toolbar
-      [color]="(date.currentDate | isEqualDates : date.selectedDate) ? 'primary' : 'light'"
-      class="ion-text-center"
-    >
-      <ion-grid>
-        <ion-row>
-          <ion-col>
-            <ion-icon
-              class="menu"
-              *ngIf="!isEditMode"
-              name="menu"
-              (click)="onOpenMenu()"
-            ></ion-icon>
-            <ion-icon
-              *ngIf="isEditMode"
-              (click)="switchToEdit()"
-              name="arrow-back"
-            ></ion-icon>
-          </ion-col>
-          <ion-col size="9">
-            <ion-title>
-              {{isEditMode ? 'Kategóriák szerkesztése' : 'BudgetLoger'}}
-            </ion-title>
-          </ion-col>
-          <ion-col>
-            <ion-icon (click)="switchToEdit()" name="pencil"></ion-icon>
-          </ion-col>
-        </ion-row>
-        <ion-row class="date">
-          <ion-col>
-            <ion-icon (click)="previousMounth()" name="chevron-back"></ion-icon>
-          </ion-col>
-          <ion-col size="9">
-            <ion-text>
-              <span>{{ date.selectedDate | date:'yyyy LLLL ' }}</span>
-              <span
-                [style.color]="(date.currentDate | isEqualDates : date.selectedDate) ? '#0ea70e' : '#222428'"
-                class="day"
-                >{{ date.selectedDate | date:'dd'}}</span
-              >
-            </ion-text>
-          </ion-col>
-          <ion-col>
-            <ion-icon (click)="nextMounth()" name="chevron-forward"></ion-icon>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-    </ion-toolbar>
-  </ion-header>
+  <ng-container *ngIf="goalService.displayedGoal$ | async as goal">
+    <ion-header>
+      <ion-toolbar
+        [color]="(date.currentDate | isEqualDates : date.selectedDate) ? 'primary' : 'light'"
+        class="ion-text-center"
+      >
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <ion-icon
+                class="menu"
+                *ngIf="!isEditMode"
+                name="menu"
+                (click)="onOpenMenu()"
+              ></ion-icon>
+              <ion-icon
+                *ngIf="isEditMode"
+                (click)="switchToEdit()"
+                name="arrow-back"
+              ></ion-icon>
+            </ion-col>
+            <ion-col size="9">
+              <ion-title>
+                {{isEditMode ? 'Kategóriák szerkesztése' : 'BudgetLoger'}}
+              </ion-title>
+            </ion-col>
+            <ion-col>
+              <ion-icon (click)="switchToEdit()" name="pencil"></ion-icon>
+            </ion-col>
+          </ion-row>
+          <ion-row class="date">
+            <ion-col>
+              <ion-icon
+                (click)="previousMounth()"
+                name="chevron-back"
+              ></ion-icon>
+            </ion-col>
+            <ion-col size="9">
+              <ion-text>
+                <span>{{ date.selectedDate | date:'yyyy LLLL ' }}</span>
+                <span
+                  [style.color]="(date.currentDate | isEqualDates : date.selectedDate) ? '#0ea70e' : '#222428'"
+                  class="day"
+                  >{{ date.selectedDate | date:'dd'}}</span
+                >
+              </ion-text>
+            </ion-col>
+            <ion-col>
+              <ion-icon
+                (click)="nextMounth()"
+                name="chevron-forward"
+              ></ion-icon>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-toolbar>
+    </ion-header>
 
-  <ion-content class="ion-text-center">
-    <ng-container
-      *ngIf="categoryService.listedCategories$ | async as categories; else loading"
-    >
-      <div class="container">
-        <ng-container *ngFor="let category of categories">
-          <div class="grid">
-            <app-category
-              [disabled]="!(date.currentDate | isEqualDates : date.selectedDate)"
-              [category]="category"
-              [isEditMode]="isEditMode"
-            ></app-category>
-          </div>
-        </ng-container>
-        <ng-container *ngIf="categories.length < 12">
-          <div class="grid item-{{categories.length + 1}}">
-            <app-category
-              [slot]="('item-' + (categories.length + 1) | castToGridSlot)"
-            >
-            </app-category>
-          </div>
-        </ng-container>
-        <div class="grid item-big">
-          <div class="item center">
-            <circle-progress [percent]="100" [title]="'Cél'"></circle-progress>
+    <ion-content class="ion-text-center">
+      <ng-container
+        *ngIf="categoryService.listedCategories$ | async as categories; else loading"
+      >
+        <div class="container">
+          <ng-container *ngFor="let category of categories">
+            <div class="grid">
+              <app-category
+                [disabled]="!(date.currentDate | isEqualDates : date.selectedDate)"
+                [category]="category"
+                [isEditMode]="isEditMode"
+              ></app-category>
+            </div>
+          </ng-container>
+          <ng-container *ngIf="categories.length < 12">
+            <div class="grid item-{{categories.length + 1}}">
+              <app-category
+                [slot]="('item-' + (categories.length + 1) | castToGridSlot)"
+              >
+              </app-category>
+            </div>
+          </ng-container>
+          <div class="grid item-big">
+            <div class="item center">
+              <circle-progress
+                (click)=" date.currentDate <= date.selectedDate ? openSetGoalMoadl() : ''"
+                [percent]="goal < 0 ? 100 : getPercentage(categories, goal)"
+                [title]="'Cél'"
+                [outerStrokeColor]="(getPercentage(categories, goal) >= 100) ? '#ff4961' : '#03ce36'"
+                [innerStrokeColor]="(getPercentage(categories, goal) >= 100) ? '#ff4961' : '#e7e8ea'"
+                [outerStrokeGradientStopColor]="(getPercentage(categories, goal) >= 100) ? '#ff4961' : '#6cff0a'"
+                [subtitle]="goal < 0 ? 'Még nincs' : goal+''"
+              ></circle-progress>
+            </div>
           </div>
         </div>
-      </div>
-    </ng-container>
-    <ng-template #loading
-      ><ion-spinner color="primary"></ion-spinner
-    ></ng-template>
-  </ion-content>
+      </ng-container>
+      <ng-template #loading
+        ><ion-spinner color="primary"></ion-spinner
+      ></ng-template>
+    </ion-content>
+  </ng-container>
 </ng-container>

@@ -14,7 +14,7 @@ export class SetMounthlyGoalComponent {
       validators: [
         Validators.required,
         Validators.maxLength(32),
-        Validators.min(0),
+        Validators.min(1),
       ],
     }),
   });

@@ -55,7 +55,13 @@ export class CategoryComponent {
             )
           );
         } else if (resData.role === 'delete') {
-          await this.categoryService.deleteCategory(this.category.id);
+          await this.categoryService
+            .deleteCategory(this.category.id)
+            .then(async () => {
+              await this.transactionService.deleteTransactionsRelatedToCategory(
+                this.category.id
+              );
+            });
         } else if (resData.role === 'archive') {
           await this.categoryService.updateCategory(
             new Category(

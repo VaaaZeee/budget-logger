@@ -22,7 +22,7 @@
             </ion-col>
             <ion-col size="9">
               <ion-title>
-                {{isEditMode ? 'Kategóriák szerkesztése' : 'BudgetLoger'}}
+                {{isEditMode ? 'Kategóriák szerkesztése' : 'Budget Logger'}}
               </ion-title>
             </ion-col>
             <ion-col>
@@ -88,7 +88,7 @@
                 [outerStrokeColor]="(getPercentage(categories, goal) >= 100) ? '#ff4961' : '#03ce36'"
                 [innerStrokeColor]="(getPercentage(categories, goal) >= 100) ? '#ff4961' : '#e7e8ea'"
                 [outerStrokeGradientStopColor]="(getPercentage(categories, goal) >= 100) ? '#ff4961' : '#6cff0a'"
-                [subtitle]="goal < 0 ? 'Még nincs' : goal+''"
+                [subtitle]="goal < 0 ? 'Még nincs' :  (goal | currency: ' Ft':'symbol':'1.0-0')"
               ></circle-progress>
             </div>
           </div>

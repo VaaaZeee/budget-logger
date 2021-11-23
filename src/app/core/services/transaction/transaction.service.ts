@@ -135,6 +135,21 @@ export class TransactionService {
     );
   }
 
+  async deleteTransactionsRelatedToCategory(categoryId: string): Promise<void> {
+    await this.transactions$
+      .pipe(
+        map((transactions) => {
+          const deleteTransactions = transactions.filter(
+            (transaction) => transaction.categoryId === categoryId
+          );
+          deleteTransactions.map(async (transaction) => {
+            await this.deleteTransaction(transaction.id);
+          });
+        })
+      )
+      .toPromise();
+  }
+
   async deleteTransaction(transactionId: string): Promise<void> {
     this.userId$
       .pipe(

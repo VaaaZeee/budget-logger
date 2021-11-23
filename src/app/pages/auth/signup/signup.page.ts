@@ -42,7 +42,7 @@ export class SignupPage {
       {
         userName: new FormControl(null, {
           updateOn: 'change',
-          validators: [Validators.required],
+          validators: [Validators.required, Validators.maxLength(32)],
         }),
         email: new FormControl(null, {
           updateOn: 'change',

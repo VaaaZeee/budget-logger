@@ -4,16 +4,10 @@ import { Storage } from '@capacitor/storage';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { Category } from 'src/app/shared/models/category.model';
 import { User } from 'src/app/shared/models/user.model';
 import { setUserAction } from '../../state/user/user.actions';
 
-interface CategoryResponseData {
-  [key: string]: Category;
-}
-
 export interface UserResponseData {
-  categories: CategoryResponseData[];
   email: string;
   userName: string;
 }

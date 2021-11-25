@@ -36,7 +36,7 @@ export class AppComponent implements OnInit {
           }
         },
         () => {
-          this.authService.logout();
+          this.authService.logOut();
         }
       );
     this.user$ = this.store.pipe(select(selectUser));
@@ -45,6 +45,6 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {}
 
   logOut() {
-    this.authService.logout().then(() => this.router.navigateByUrl('/login'));
+    this.authService.logOut().then(() => this.router.navigateByUrl('/login'));
   }
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ModalController } from '@ionic/angular';
-import { IconCreateorComponent } from 'src/app/shared/icon-createor/icon-createor.component';
+import { IconCreatorComponent } from 'src/app/shared/icon-createor/icon-creator.component';
 
 @Component({
   selector: 'app-add-category',
@@ -43,7 +43,7 @@ export class AddCategoryComponent implements OnInit {
   openIconCreatorModal() {
     this.modalCtrl
       .create({
-        component: IconCreateorComponent,
+        component: IconCreatorComponent,
         cssClass: 'icon-creator-modal',
         id: 'icon-creator-modal',
         componentProps: {

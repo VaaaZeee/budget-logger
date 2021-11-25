@@ -1,8 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ModalController } from '@ionic/angular';
-import { IconCreateorComponent } from 'src/app/shared/icon-createor/icon-createor.component';
-import { IconListComponent } from 'src/app/shared/icon-createor/icon-list/icon-list.component';
+import { IconCreatorComponent } from 'src/app/shared/icon-createor/icon-creator.component';
 import { Category } from 'src/app/shared/models/category.model';
 
 @Component({
@@ -72,7 +71,7 @@ export class EditCategoryComponent implements OnInit {
   openIconListModal() {
     this.modalCtrl
       .create({
-        component: IconCreateorComponent,
+        component: IconCreatorComponent,
         cssClass: 'icon-creator-modal',
         id: 'icon-creator-modal',
         componentProps: {

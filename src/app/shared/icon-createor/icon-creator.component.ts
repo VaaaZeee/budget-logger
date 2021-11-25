@@ -3,11 +3,11 @@ import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-icon-createor',
-  templateUrl: './icon-createor.component.html',
-  styleUrls: ['./icon-createor.component.scss'],
+  templateUrl: './icon-creator.component.html',
+  styleUrls: ['./icon-creator.component.scss'],
   animations: [],
 })
-export class IconCreateorComponent implements OnInit {
+export class IconCreatorComponent implements OnInit {
   @Input() selectedIcon: string;
   @Input() selectedColor: string;
   segmentValue = 'icon';

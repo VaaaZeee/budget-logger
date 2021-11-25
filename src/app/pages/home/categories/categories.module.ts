@@ -13,7 +13,7 @@ import { CategoryComponent } from './category/category.component';
 import { AddCostComponent } from './add-cost/add-cost.component';
 import { AddCategoryComponent } from './add-category/add-category.component';
 import { EditCategoryComponent } from './edit-category/edit-category.component';
-import { IconCreateorModule } from 'src/app/shared/icon-createor/icon-createor.module';
+import { IconCreatorModule } from 'src/app/shared/icon-createor/icon-creator.module';
 import { IsEqualDatesPipeModule } from 'src/app/shared/pipes/compare/dates/is-equal-dates-pipe.module';
 import { SetMounthlyGoalComponent } from './set-mounthly-goal/set-mounthly-goal.component';
 
@@ -32,7 +32,7 @@ import { SetMounthlyGoalComponent } from './set-mounthly-goal/set-mounthly-goal.
     ReactiveFormsModule,
     IonicModule,
     CastToGridSlotPipeModule,
-    IconCreateorModule,
+    IconCreatorModule,
     IsEqualDatesPipeModule,
     NgCircleProgressModule.forRoot({
       radius: 60,

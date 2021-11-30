@@ -119,8 +119,6 @@ export class TransactionService {
   getTransactionsInSelectedMounth(): Observable<Transaction[]> {
     return combineLatest([this.date$, this.transactions$]).pipe(
       map(([lastDate, transactions]) => {
-        console.log(lastDate);
-
         return transactions.filter((transaction) => {
           const firstDate = new Date(
             lastDate.getFullYear(),

@@ -118,8 +118,10 @@ export class TransactionService {
 
   getTransactionsInSelectedMounth(): Observable<Transaction[]> {
     return combineLatest([this.date$, this.transactions$]).pipe(
-      map(([lastDate, transactions]) =>
-        transactions.filter((transaction) => {
+      map(([lastDate, transactions]) => {
+        console.log(lastDate);
+
+        return transactions.filter((transaction) => {
           const firstDate = new Date(
             lastDate.getFullYear(),
             lastDate.getMonth(),
@@ -127,8 +129,8 @@ export class TransactionService {
           );
           const transactionDate = new Date(transaction.date);
           return firstDate <= transactionDate && transactionDate <= lastDate;
-        })
-      ),
+        });
+      }),
       tap((listedTransactions) => {
         this.listedTransactions.next(listedTransactions);
       })

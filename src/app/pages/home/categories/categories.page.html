@@ -87,6 +87,7 @@
                 [title]="'Cél'"
                 [outerStrokeColor]="(getPercentage(categories, goal) >= 100) ? '#ff4961' : '#03ce36'"
                 [innerStrokeColor]="(getPercentage(categories, goal) >= 100) ? '#ff4961' : '#e7e8ea'"
+                [titleColor]="(getPercentage(categories, goal) >= 100) ? '#ff4961' : '#0ea70e'"
                 [outerStrokeGradientStopColor]="(getPercentage(categories, goal) >= 100) ? '#ff4961' : '#6cff0a'"
                 [subtitle]="goal < 0 ? 'Még nincs' :  (goal | currency: ' Ft':'symbol':'1.0-0')"
               ></circle-progress>

@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { take } from 'rxjs/operators';
-import { GoalService } from 'src/app/core/services/goal/goal.service';
 import { setDateAction } from 'src/app/core/state/date/date.actions';
 
 @Component({
@@ -10,7 +8,7 @@ import { setDateAction } from 'src/app/core/state/date/date.actions';
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage {
-  constructor(private store: Store, private goalService: GoalService) {}
+  constructor(private store: Store) {}
 
   ionViewDidEnter() {
     const currentDate = new Date();
@@ -19,6 +17,7 @@ export class HomePage {
       currentDate.getMonth() + 1,
       0
     );
+    date.setHours(23, 59, 59);
     this.store.dispatch(setDateAction({ date }));
   }
 }

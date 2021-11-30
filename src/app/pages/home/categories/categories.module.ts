@@ -46,7 +46,6 @@ import { SetMounthlyGoalComponent } from './set-mounthly-goal/set-mounthly-goal.
       title: 'Cél',
       titleFontSize: '32',
       subtitleFontSize: '16',
-      titleColor: '#fff',
       subtitleColor: '#888',
       animateTitle: false,
       animationDuration: 1000,

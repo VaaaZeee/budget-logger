@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="app_name">budget-logger</string>
-    <string name="title_activity_main">budget-logger</string>
-    <string name="package_name">io.ionic.starter</string>
-    <string name="custom_url_scheme">io.ionic.starter</string>
+    <string name="app_name">Budget Logger</string>
+    <string name="title_activity_main">Budget Logger</string>
+    <string name="package_name">io.ionic.hu.budget.logger.szte</string>
+    <string name="custom_url_scheme">io.ionic.hu.budget.logger.szte</string>
 </resources>

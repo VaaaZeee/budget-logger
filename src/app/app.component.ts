@@ -6,9 +6,7 @@ import { Observable } from 'rxjs';
 import { take } from 'rxjs/operators';
 import { AuthService } from './core/services/auth/auth.service';
 import { UserService } from './core/services/auth/user.service';
-import { CategoryService } from './core/services/category/category.service';
 import { selectUser } from './core/state/user/user.selectors';
-import { Category } from './shared/models/category.model';
 import { User } from './shared/models/user.model';
 
 @Component({
@@ -23,8 +21,7 @@ export class AppComponent implements OnInit {
     private authService: AuthService,
     private userService: UserService,
     private router: Router,
-    private store: Store,
-    private http: HttpClient
+    private store: Store
   ) {
     this.authService
       .autoLogin()

@@ -1,0 +1,1072 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>budget-logger documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">budget-logger documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  TransactionsPage</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/pages/home/transactions/transactions.page.ts</code>
+</p>
+
+
+
+
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-transactions</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./transactions.page.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./transactions.page.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#displayedData$" >displayedData$</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#deleteTransaction" >deleteTransaction</a>
+                            </li>
+                            <li>
+                                <a href="#ionViewWillEnter" >ionViewWillEnter</a>
+                            </li>
+                            <li>
+                                <a href="#nextMounth" >nextMounth</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#notImplementedYet" >notImplementedYet</a>
+                            </li>
+                            <li>
+                                <a href="#onOpenMenu" >onOpenMenu</a>
+                            </li>
+                            <li>
+                                <a href="#previousMounth" >previousMounth</a>
+                            </li>
+                            <li>
+                                <a href="#spentOnDay" >spentOnDay</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(transactionService: <a href="../injectables/TransactionService.html" target="_self">TransactionService</a>, categoryService: <a href="../injectables/CategoryService.html" target="_self">CategoryService</a>, store: Store, menuCtrl: MenuController, toastCtrl: ToastController)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/pages/home/transactions/transactions.page.ts:35</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>transactionService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/TransactionService.html" target="_self" >TransactionService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>categoryService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/CategoryService.html" target="_self" >CategoryService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>store</td>
+                                                  
+                                                        <td>
+                                                                    <code>Store</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>menuCtrl</td>
+                                                  
+                                                        <td>
+                                                                    <code>MenuController</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>toastCtrl</td>
+                                                  
+                                                        <td>
+                                                                    <code>ToastController</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deleteTransaction"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>deleteTransaction</b></span>
+                        <a href="#deleteTransaction"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>deleteTransaction(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="85"
+                            class="link-to-prism">src/app/pages/home/transactions/transactions.page.ts:85</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ionViewWillEnter"></a>
+                    <span class="name">
+                        <span ><b>ionViewWillEnter</b></span>
+                        <a href="#ionViewWillEnter"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ionViewWillEnter()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="89"
+                            class="link-to-prism">src/app/pages/home/transactions/transactions.page.ts:89</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="nextMounth"></a>
+                    <span class="name">
+                        <span ><b>nextMounth</b></span>
+                        <a href="#nextMounth"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>nextMounth()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="100"
+                            class="link-to-prism">src/app/pages/home/transactions/transactions.page.ts:100</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="notImplementedYet"></a>
+                    <span class="name">
+                        <span class="modifier">Async</span>
+                        <span ><b>notImplementedYet</b></span>
+                        <a href="#notImplementedYet"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>notImplementedYet()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="108"
+                            class="link-to-prism">src/app/pages/home/transactions/transactions.page.ts:108</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onOpenMenu"></a>
+                    <span class="name">
+                        <span ><b>onOpenMenu</b></span>
+                        <a href="#onOpenMenu"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onOpenMenu()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="96"
+                            class="link-to-prism">src/app/pages/home/transactions/transactions.page.ts:96</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="previousMounth"></a>
+                    <span class="name">
+                        <span ><b>previousMounth</b></span>
+                        <a href="#previousMounth"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>previousMounth()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="104"
+                            class="link-to-prism">src/app/pages/home/transactions/transactions.page.ts:104</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="spentOnDay"></a>
+                    <span class="name">
+                        <span ><b>spentOnDay</b></span>
+                        <a href="#spentOnDay"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>spentOnDay(day: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank">Date</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="70"
+                            class="link-to-prism">src/app/pages/home/transactions/transactions.page.ts:70</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>day</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;number&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="displayedData$"></a>
+                    <span class="name">
+                        <span ><b>displayedData$</b></span>
+                        <a href="#displayedData$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Observable&lt;DisplayedData&gt;</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/pages/home/transactions/transactions.page.ts:35</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+import { MenuController, ToastController } from &#x27;@ionic/angular&#x27;;
+import { select, Store } from &#x27;@ngrx/store&#x27;;
+import { combineLatest, Observable } from &#x27;rxjs&#x27;;
+import { filter, map, take } from &#x27;rxjs/operators&#x27;;
+import { CategoryService } from &#x27;src/app/core/services/category/category.service&#x27;;
+import { TransactionService } from &#x27;src/app/core/services/transaction/transaction.service&#x27;;
+import { DateState } from &#x27;src/app/core/state/app.state&#x27;;
+import {
+  decrementDateAction,
+  incrementDateAction,
+} from &#x27;src/app/core/state/date/date.actions&#x27;;
+import { selectDate } from &#x27;src/app/core/state/date/date.selectors&#x27;;
+import { Category } from &#x27;src/app/shared/models/category.model&#x27;;
+import { Transaction } from &#x27;src/app/shared/models/transaction.model&#x27;;
+import { isEqualDates } from &#x27;src/app/shared/utils/date.utils&#x27;;
+
+interface Data {
+  transaction: Transaction;
+  category: Category;
+  isFirstOfTheDay: boolean;
+}
+
+interface DisplayedData {
+  date: DateState;
+  data: Data[];
+}
+
+@Component({
+  selector: &#x27;app-transactions&#x27;,
+  templateUrl: &#x27;./transactions.page.html&#x27;,
+  styleUrls: [&#x27;./transactions.page.scss&#x27;],
+})
+export class TransactionsPage {
+  displayedData$: Observable&lt;DisplayedData&gt;;
+  constructor(
+    private transactionService: TransactionService,
+    private categoryService: CategoryService,
+    private store: Store,
+    private menuCtrl: MenuController,
+    private toastCtrl: ToastController
+  ) {
+    this.displayedData$ &#x3D; combineLatest([
+      this.store.pipe(select(selectDate)),
+      this.transactionService.listedTransactions$,
+      this.categoryService.categories$,
+    ]).pipe(
+      map(([date, transactions, categories]) &#x3D;&gt; {
+        const data: Data[] &#x3D; [];
+        let prevDate &#x3D; null;
+        transactions.forEach((transaction) &#x3D;&gt; {
+          let isFirstOfTheDay &#x3D; false;
+          const category &#x3D; categories.find(
+            (cat) &#x3D;&gt; cat.id &#x3D;&#x3D;&#x3D; transaction.categoryId
+          );
+          if (!isEqualDates(prevDate, transaction.date)) {
+            isFirstOfTheDay &#x3D; true;
+            prevDate &#x3D; transaction.date;
+            data.push({ transaction, category, isFirstOfTheDay });
+          } else {
+            data.push({ transaction, category, isFirstOfTheDay });
+          }
+        });
+        return { date, data };
+      }),
+      filter((res) &#x3D;&gt; !!res.date &amp;&amp; !!res.data)
+    );
+  }
+
+  spentOnDay(day: Date): Observable&lt;number&gt; {
+    let res &#x3D; 0;
+    return this.transactionService.listedTransactions$.pipe(
+      take(1),
+      map((transactions) &#x3D;&gt; {
+        transactions.forEach((transaction) &#x3D;&gt; {
+          if (isEqualDates(transaction.date, day)) {
+            res +&#x3D; transaction.spent;
+          }
+        });
+        return res;
+      })
+    );
+  }
+
+  async deleteTransaction(id: string) {
+    await this.transactionService.deleteTransaction(id);
+  }
+
+  ionViewWillEnter() {
+    this.transactionService
+      .getTransactionsInSelectedMounth()
+      .pipe(take(1))
+      .subscribe();
+  }
+
+  onOpenMenu() {
+    this.menuCtrl.toggle(&#x27;main&#x27;);
+  }
+
+  nextMounth() {
+    this.store.dispatch(incrementDateAction());
+  }
+
+  previousMounth() {
+    this.store.dispatch(decrementDateAction());
+  }
+
+  async notImplementedYet() {
+    const toast &#x3D; await this.toastCtrl.create({
+      header: &#x27;Info&#x27;,
+      message: &#x27;Még nem implementáltam a funkciót&#x27;,
+      position: &#x27;top&#x27;,
+      buttons: [
+        {
+          text: &#x27;Done&#x27;,
+          role: &#x27;cancel&#x27;,
+        },
+      ],
+    });
+    await toast.present();
+    await toast.onDidDismiss();
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;ng-container *ngIf&#x3D;&quot;displayedData$ | async as displayedData&quot;&gt;
+  &lt;ion-header&gt;
+    &lt;ion-toolbar
+      [color]&#x3D;&quot;(displayedData.date.currentDate | isEqualDates : displayedData.date.selectedDate) ? &#x27;primary&#x27; : &#x27;light&#x27;&quot;
+      class&#x3D;&quot;ion-text-center&quot;
+    &gt;
+      &lt;ion-grid&gt;
+        &lt;ion-row&gt;
+          &lt;ion-col&gt;
+            &lt;ion-icon class&#x3D;&quot;menu&quot; name&#x3D;&quot;menu&quot;&gt;&lt;/ion-icon&gt;
+          &lt;/ion-col&gt;
+          &lt;ion-col size&#x3D;&quot;9&quot;&gt;
+            &lt;ion-title&gt;Budget Logger &lt;/ion-title&gt;
+          &lt;/ion-col&gt;
+          &lt;ion-col&gt;
+            &lt;ion-icon name&#x3D;&quot;search&quot; (click)&#x3D;&quot;notImplementedYet()&quot;&gt;&lt;/ion-icon&gt;
+          &lt;/ion-col&gt;
+        &lt;/ion-row&gt;
+        &lt;ion-row class&#x3D;&quot;date&quot;&gt;
+          &lt;ion-col&gt;
+            &lt;ion-icon (click)&#x3D;&quot;previousMounth()&quot; name&#x3D;&quot;chevron-back&quot;&gt;&lt;/ion-icon&gt;
+          &lt;/ion-col&gt;
+          &lt;ion-col size&#x3D;&quot;9&quot;&gt;
+            &lt;ion-text&gt;
+              &lt;span
+                &gt;{{ displayedData.date.selectedDate | date:&#x27;yyyy LLLL &#x27;}}&lt;/span
+              &gt;
+              &lt;span
+                [style.color]&#x3D;&quot;(displayedData.date.currentDate | isEqualDates : displayedData.date.selectedDate) ? &#x27;#0ea70e&#x27; : &#x27;#222428&#x27;&quot;
+                class&#x3D;&quot;day&quot;
+                &gt;{{ displayedData.date.selectedDate | date:&#x27;dd&#x27;}}&lt;/span
+              &gt;
+            &lt;/ion-text&gt;
+          &lt;/ion-col&gt;
+          &lt;ion-col&gt;
+            &lt;ion-icon (click)&#x3D;&quot;nextMounth()&quot; name&#x3D;&quot;chevron-forward&quot;&gt;&lt;/ion-icon&gt;
+          &lt;/ion-col&gt;
+        &lt;/ion-row&gt;
+      &lt;/ion-grid&gt;
+    &lt;/ion-toolbar&gt;
+  &lt;/ion-header&gt;
+
+  &lt;!-- &lt;ion-item-sliding *ngFor&#x3D;&quot;let offer of offers&quot; #slidingItem&gt;
+            &lt;app-offer-item [offer]&#x3D;&quot;offer&quot;&gt;&lt;/app-offer-item&gt;
+            &lt;ion-item-options side&#x3D;&quot;start&quot;&gt;
+              &lt;ion-item-option
+                color&#x3D;&quot;secondary&quot;
+                (click)&#x3D;&quot;onEdit(offer.id, slidingItem)&quot;
+                &gt;&lt;ion-icon name&#x3D;&quot;create&quot; slot&#x3D;&quot;icon-only&quot;&gt;&lt;/ion-icon
+              &gt;&lt;/ion-item-option&gt;
+            &lt;/ion-item-options&gt;
+
+          &lt;/ion-item-sliding&gt; --&gt;
+
+  &lt;ion-content&gt;
+    &lt;ng-container&gt;
+      &lt;ion-grid&gt;
+        &lt;ng-container *ngFor&#x3D;&quot;let data of displayedData.data&quot;&gt;
+          &lt;ion-row class&#x3D;&quot;frist-of-day&quot; *ngIf&#x3D;&quot;data.isFirstOfTheDay&quot;&gt;
+            &lt;ion-col&gt;
+              &lt;ion-item&gt;
+                &lt;ion-grid&gt;
+                  &lt;ion-row class&#x3D;&quot;ion-text-center&quot;&gt;
+                    &lt;ion-col size&#x3D;&quot;2&quot;&gt;
+                      &lt;div class&#x3D;&quot;date-day&quot;&gt;
+                        {{data.transaction.date | date:&#x27;dd&#x27;}}
+                      &lt;/div&gt;
+                    &lt;/ion-col&gt;
+                    &lt;ion-col class&#x3D;&quot;ion-text-start&quot;&gt;
+                      &lt;ion-label&gt;
+                        &lt;div class&#x3D;&quot;container&quot;&gt;
+                          &lt;div class&#x3D;&quot;day-of-the-week&quot;&gt;
+                            {{data.transaction.date | date:&#x27;EEEE&#x27;}}
+                          &lt;/div&gt;
+                          &lt;div class&#x3D;&quot;mounth-year&quot;&gt;&lt;/div&gt;
+                          {{data.transaction.date | date:&#x27;LLLL yyyy&#x27;}}
+                        &lt;/div&gt;
+                      &lt;/ion-label&gt;
+                    &lt;/ion-col&gt;
+                    &lt;ion-col class&#x3D;&quot;ion-text-end&quot;&gt;
+                      &lt;ion-label class&#x3D;&quot;spent&quot;&gt;
+                        &lt;ion-text color&#x3D;&quot;danger&quot;
+                          &gt;{{spentOnDay(data.transaction.date) | async}} Ft
+                        &lt;/ion-text&gt;
+                      &lt;/ion-label&gt;
+                    &lt;/ion-col&gt;
+                  &lt;/ion-row&gt;
+                &lt;/ion-grid&gt;
+              &lt;/ion-item&gt;
+            &lt;/ion-col&gt;
+          &lt;/ion-row&gt;
+          &lt;ion-row&gt;
+            &lt;ion-col&gt;
+              &lt;ion-item-sliding #slidingItem&gt;
+                &lt;app-transaction
+                  [category]&#x3D;&quot;data.category&quot;
+                  [transaction]&#x3D;&quot;data.transaction&quot;
+                &gt;&lt;/app-transaction&gt;
+                &lt;ion-item-options side&#x3D;&quot;end&quot;&gt;
+                  &lt;ion-item-option
+                    color&#x3D;&quot;danger&quot;
+                    (click)&#x3D;&quot;deleteTransaction(data.transaction.id)&quot;
+                    &gt;&lt;ion-icon name&#x3D;&quot;trash&quot; slot&#x3D;&quot;icon-only&quot;&gt;&lt;/ion-icon
+                  &gt;&lt;/ion-item-option&gt;
+                &lt;/ion-item-options&gt;
+              &lt;/ion-item-sliding&gt;
+            &lt;/ion-col&gt;
+          &lt;/ion-row&gt;
+        &lt;/ng-container&gt;
+      &lt;/ion-grid&gt;
+    &lt;/ng-container&gt;
+  &lt;/ion-content&gt;
+&lt;/ng-container&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./transactions.page.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.day {
+  background-color: var(--ion-color-primary-contrast);
+  color: transparent;
+  padding: 2px;
+  border-radius: 4px;
+}
+
+.date {
+  ion-icon {
+    font-size: 1.2rem;
+  }
+}
+
+ion-content {
+  ion-grid {
+    padding: 0;
+  }
+  ion-col {
+    padding: 0;
+  }
+}
+
+.frist-of-day {
+  margin-top: 1rem;
+  ion-col {
+    padding: 0;
+    margin: auto;
+
+    .container {
+      text-transform: uppercase;
+      display: grid;
+      grid-auto-columns: 1fr;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
+      gap: 0px 0px;
+      grid-template-areas:
+        &quot;day-of-the-week&quot;
+        &quot;mounth-year&quot;;
+      justify-content: stretch;
+      justify-items: stretch;
+      align-items: stretch;
+      margin-left: 8px;
+    }
+    .day-of-the-week {
+      justify-self: start;
+      align-self: center;
+      grid-area: day-of-the-week;
+    }
+    .mounth-year {
+      justify-self: start;
+      align-self: center;
+      grid-area: mounth-year;
+    }
+  }
+
+  .date-day {
+    font-size: 2rem;
+  }
+}
+
+ion-toolbar {
+  font-weight: bold;
+  align-self: center;
+  ion-icon {
+    font-size: 1.5rem;
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><ng-container *ngIf="displayedData$ | async as displayedData">  <ion-header>    <ion-toolbar      [color]="(displayedData.date.currentDate | isEqualDates : displayedData.date.selectedDate) ? \'primary\' : \'light\'"      class="ion-text-center"    >      <ion-grid>        <ion-row>          <ion-col>            <ion-icon class="menu" name="menu"></ion-icon>          </ion-col>          <ion-col size="9">            <ion-title>Budget Logger </ion-title>          </ion-col>          <ion-col>            <ion-icon name="search" (click)="notImplementedYet()"></ion-icon>          </ion-col>        </ion-row>        <ion-row class="date">          <ion-col>            <ion-icon (click)="previousMounth()" name="chevron-back"></ion-icon>          </ion-col>          <ion-col size="9">            <ion-text>              <span                >{{ displayedData.date.selectedDate | date:\'yyyy LLLL \'}}</span              >              <span                [style.color]="(displayedData.date.currentDate | isEqualDates : displayedData.date.selectedDate) ? \'#0ea70e\' : \'#222428\'"                class="day"                >{{ displayedData.date.selectedDate | date:\'dd\'}}</span              >            </ion-text>          </ion-col>          <ion-col>            <ion-icon (click)="nextMounth()" name="chevron-forward"></ion-icon>          </ion-col>        </ion-row>      </ion-grid>    </ion-toolbar>  </ion-header>  <!-- <ion-item-sliding *ngFor="let offer of offers" #slidingItem>            <app-offer-item [offer]="offer"></app-offer-item>            <ion-item-options side="start">              <ion-item-option                color="secondary"                (click)="onEdit(offer.id, slidingItem)"                ><ion-icon name="create" slot="icon-only"></ion-icon              ></ion-item-option>            </ion-item-options>          </ion-item-sliding> -->  <ion-content>    <ng-container>      <ion-grid>        <ng-container *ngFor="let data of displayedData.data">          <ion-row class="frist-of-day" *ngIf="data.isFirstOfTheDay">            <ion-col>              <ion-item>                <ion-grid>                  <ion-row class="ion-text-center">                    <ion-col size="2">                      <div class="date-day">                        {{data.transaction.date | date:\'dd\'}}                      </div>                    </ion-col>                    <ion-col class="ion-text-start">                      <ion-label>                        <div class="container">                          <div class="day-of-the-week">                            {{data.transaction.date | date:\'EEEE\'}}                          </div>                          <div class="mounth-year"></div>                          {{data.transaction.date | date:\'LLLL yyyy\'}}                        </div>                      </ion-label>                    </ion-col>                    <ion-col class="ion-text-end">                      <ion-label class="spent">                        <ion-text color="danger"                          >{{spentOnDay(data.transaction.date) | async}} Ft                        </ion-text>                      </ion-label>                    </ion-col>                  </ion-row>                </ion-grid>              </ion-item>            </ion-col>          </ion-row>          <ion-row>            <ion-col>              <ion-item-sliding #slidingItem>                <app-transaction                  [category]="data.category"                  [transaction]="data.transaction"                ></app-transaction>                <ion-item-options side="end">                  <ion-item-option                    color="danger"                    (click)="deleteTransaction(data.transaction.id)"                    ><ion-icon name="trash" slot="icon-only"></ion-icon                  ></ion-item-option>                </ion-item-options>              </ion-item-sliding>            </ion-col>          </ion-row>        </ng-container>      </ion-grid>    </ng-container>  </ion-content></ng-container></div>'
+    var COMPONENTS = [{'name': 'AddCategoryComponent', 'selector': 'app-add-category'},{'name': 'AddCostComponent', 'selector': 'app-add-cost'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CategoriesPage', 'selector': 'app-categories'},{'name': 'CategoryComponent', 'selector': 'app-category'},{'name': 'ColorListComponent', 'selector': 'app-color-list'},{'name': 'EditCategoryComponent', 'selector': 'app-edit-category'},{'name': 'HomePage', 'selector': 'app-home'},{'name': 'IconCreatorComponent', 'selector': 'app-icon-createor'},{'name': 'IconListComponent', 'selector': 'app-icon-list'},{'name': 'LoadingSpinnerComponent', 'selector': 'app-loading-spinner'},{'name': 'LoginPage', 'selector': 'app-login'},{'name': 'OverviewPage', 'selector': 'app-overview'},{'name': 'SetMounthlyGoalComponent', 'selector': 'app-set-mounthly-goal'},{'name': 'SignupPage', 'selector': 'app-signup'},{'name': 'TransactionComponent', 'selector': 'app-transaction'},{'name': 'TransactionsPage', 'selector': 'app-transactions'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'TransactionsPage'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'TransactionsPage.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

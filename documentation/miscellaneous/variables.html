@@ -1,0 +1,1007 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>budget-logger documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">budget-logger documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content miscellaneous-variables">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Miscellaneous</li>
+  <li>Variables</li>
+</ol>
+
+<section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <ul class="index-list">
+                        <li>
+                            <a href="#COLOR_LIST" title="src/app/shared/constants/color-list.ts" ><b>COLOR_LIST</b>&nbsp;&nbsp;&nbsp;(src/.../color-list.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#compareDates" title="src/app/shared/utils/date.utils.ts" ><b>compareDates</b>&nbsp;&nbsp;&nbsp;(src/.../date.utils.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#dat" title="src/app/core/state/date/date.reducer.ts" ><b>dat</b>&nbsp;&nbsp;&nbsp;(src/.../date.reducer.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#dateReducer" title="src/app/core/state/date/date.reducer.ts" ><b>dateReducer</b>&nbsp;&nbsp;&nbsp;(src/.../date.reducer.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#decrementDateAction" title="src/app/core/state/date/date.actions.ts" ><b>decrementDateAction</b>&nbsp;&nbsp;&nbsp;(src/.../date.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#environment" title="src/environments/environment.prod.ts" ><b>environment</b>&nbsp;&nbsp;&nbsp;(src/.../environment.prod.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#environment" title="src/environments/environment.ts" ><b>environment</b>&nbsp;&nbsp;&nbsp;(src/.../environment.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#headerReducer" title="src/app/core/state/header/header.reducer.ts" ><b>headerReducer</b>&nbsp;&nbsp;&nbsp;(src/.../header.reducer.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#ICON_LIST" title="src/app/shared/constants/icon-list.consts.ts" ><b>ICON_LIST</b>&nbsp;&nbsp;&nbsp;(src/.../icon-list.consts.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#incrementDateAction" title="src/app/core/state/date/date.actions.ts" ><b>incrementDateAction</b>&nbsp;&nbsp;&nbsp;(src/.../date.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#initDate" title="src/app/core/state/date/date.reducer.ts" ><b>initDate</b>&nbsp;&nbsp;&nbsp;(src/.../date.reducer.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#initialState" title="src/app/core/state/date/date.reducer.ts" ><b>initialState</b>&nbsp;&nbsp;&nbsp;(src/.../date.reducer.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#initialState" title="src/app/core/state/user/user.reducer.ts" ><b>initialState</b>&nbsp;&nbsp;&nbsp;(src/.../user.reducer.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#initialState" title="src/app/core/state/header/header.reducer.ts" ><b>initialState</b>&nbsp;&nbsp;&nbsp;(src/.../header.reducer.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#isEqualDates" title="src/app/shared/utils/date.utils.ts" ><b>isEqualDates</b>&nbsp;&nbsp;&nbsp;(src/.../date.utils.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#OPREATIONS" title="src/app/pages/home/categories/add-cost/add-cost.component.ts" ><b>OPREATIONS</b>&nbsp;&nbsp;&nbsp;(src/.../add-cost.component.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#resetModeAction" title="src/app/core/state/header/header.actions.ts" ><b>resetModeAction</b>&nbsp;&nbsp;&nbsp;(src/.../header.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#resetUserAction" title="src/app/core/state/user/user.actions.ts" ><b>resetUserAction</b>&nbsp;&nbsp;&nbsp;(src/.../user.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#selectCurrentDate" title="src/app/core/state/date/date.selectors.ts" ><b>selectCurrentDate</b>&nbsp;&nbsp;&nbsp;(src/.../date.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#selectDate" title="src/app/core/state/date/date.selectors.ts" ><b>selectDate</b>&nbsp;&nbsp;&nbsp;(src/.../date.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#selectHeaderMode" title="src/app/core/state/header/header.selectors.ts" ><b>selectHeaderMode</b>&nbsp;&nbsp;&nbsp;(src/.../header.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#selectSelectedDate" title="src/app/core/state/date/date.selectors.ts" ><b>selectSelectedDate</b>&nbsp;&nbsp;&nbsp;(src/.../date.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#selectUser" title="src/app/core/state/user/user.selectors.ts" ><b>selectUser</b>&nbsp;&nbsp;&nbsp;(src/.../user.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#selectUserId" title="src/app/core/state/user/user.selectors.ts" ><b>selectUserId</b>&nbsp;&nbsp;&nbsp;(src/.../user.selectors.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#setDateAction" title="src/app/core/state/date/date.actions.ts" ><b>setDateAction</b>&nbsp;&nbsp;&nbsp;(src/.../date.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#setUserAction" title="src/app/core/state/user/user.actions.ts" ><b>setUserAction</b>&nbsp;&nbsp;&nbsp;(src/.../user.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#switchModeAction" title="src/app/core/state/header/header.actions.ts" ><b>switchModeAction</b>&nbsp;&nbsp;&nbsp;(src/.../header.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#userReducer" title="src/app/core/state/user/user.reducer.ts" ><b>userReducer</b>&nbsp;&nbsp;&nbsp;(src/.../user.reducer.ts)</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    <h3>src/app/shared/constants/color-list.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="COLOR_LIST"></a>
+                    <span class="name">
+                        <span ><b>COLOR_LIST</b></span>
+                        <a href="#COLOR_LIST"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+  &#x27;#3ae96f&#x27;,
+  &#x27;#f54242&#x27;,
+  &#x27;#eb8333&#x27;,
+  &#x27;#e3d222&#x27;,
+  &#x27;#b0e322&#x27;,
+  &#x27;#66e322&#x27;,
+  &#x27;#6e088a&#x27;,
+  &#x27;#49cca9&#x27;,
+  &#x27;#49b0cc&#x27;,
+  &#x27;#495fcc&#x27;,
+  &#x27;#8049cc&#x27;,
+  &#x27;#bb49cc&#x27;,
+  &#x27;#cc4998&#x27;,
+  &#x27;#cc4963&#x27;,
+  &#x27;#4977cc&#x27;,
+  &#x27;#694921&#x27;,
+  &#x27;#452c0d&#x27;,
+]</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/shared/utils/date.utils.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="compareDates"></a>
+                    <span class="name">
+                        <span ><b>compareDates</b></span>
+                        <a href="#compareDates"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(a: Date, b: Date) &#x3D;&gt; {
+  if (!a || !b) {
+    return null;
+  }
+  return a.getTime() - b.getTime();
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isEqualDates"></a>
+                    <span class="name">
+                        <span ><b>isEqualDates</b></span>
+                        <a href="#isEqualDates"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(date1: Date, date2: Date) &#x3D;&gt; {
+  if (!date1 || !date2) {
+    return false;
+  }
+  if (date1.getFullYear() &#x3D;&#x3D;&#x3D; date2.getFullYear()) {
+    if (date1.getMonth() &#x3D;&#x3D;&#x3D; date2.getMonth()) {
+      if (date1.getDay() &#x3D;&#x3D;&#x3D; date2.getDay()) {
+        return true;
+      }
+    }
+  }
+
+  return false;
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/core/state/date/date.reducer.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="dat"></a>
+                    <span class="name">
+                        <span ><b>dat</b></span>
+                        <a href="#dat"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Date()</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="dateReducer"></a>
+                    <span class="name">
+                        <span ><b>dateReducer</b></span>
+                        <a href="#dateReducer"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createReducer(
+  initialState,
+  on(setDateAction, (state, { date }) &#x3D;&gt; ({
+    currentDate: date,
+    selectedDate: date,
+  })),
+  on(incrementDateAction, (state) &#x3D;&gt; {
+    const increment &#x3D; new Date(
+      state.selectedDate.getFullYear(),
+      state.selectedDate.getMonth() + 2,
+      0
+    );
+    return { ...state, selectedDate: increment };
+  }),
+  on(decrementDateAction, (state) &#x3D;&gt; {
+    const decrement &#x3D; new Date(
+      state.selectedDate.getFullYear(),
+      state.selectedDate.getMonth(),
+      0
+    );
+    return { ...state, selectedDate: decrement };
+  })
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="initDate"></a>
+                    <span class="name">
+                        <span ><b>initDate</b></span>
+                        <a href="#initDate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Date(dat.getFullYear(), dat.getMonth() + 1, 0)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="initialState"></a>
+                    <span class="name">
+                        <span ><b>initialState</b></span>
+                        <a href="#initialState"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{ currentDate: initDate, selectedDate: initDate }</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/core/state/date/date.actions.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="decrementDateAction"></a>
+                    <span class="name">
+                        <span ><b>decrementDateAction</b></span>
+                        <a href="#decrementDateAction"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(&#x27;[Toolbar] Decrement Date&#x27;)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="incrementDateAction"></a>
+                    <span class="name">
+                        <span ><b>incrementDateAction</b></span>
+                        <a href="#incrementDateAction"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(&#x27;[Toolbar] Increment Date&#x27;)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setDateAction"></a>
+                    <span class="name">
+                        <span ><b>setDateAction</b></span>
+                        <a href="#setDateAction"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(
+  &#x27;[Home Component] Set Date&#x27;,
+  props&lt;{ date: Date }&gt;()
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/environments/environment.prod.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="environment"></a>
+                    <span class="name">
+                        <span ><b>environment</b></span>
+                        <a href="#environment"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  production: true,
+  firebaseAPIKey: &#x27;AIzaSyAL0Mg_0rH7SAstbCr4psfFP-YpP9lnA_E&#x27;,
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/environments/environment.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="environment"></a>
+                    <span class="name">
+                        <span ><b>environment</b></span>
+                        <a href="#environment"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  production: false,
+  firebaseAPIKey: &#x27;AIzaSyAL0Mg_0rH7SAstbCr4psfFP-YpP9lnA_E&#x27;,
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/core/state/header/header.reducer.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="headerReducer"></a>
+                    <span class="name">
+                        <span ><b>headerReducer</b></span>
+                        <a href="#headerReducer"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createReducer(
+  initialState,
+  on(switchModeAction, (state, { mode }) &#x3D;&gt; mode),
+  on(resetModeAction, () &#x3D;&gt; initialState)
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="initialState"></a>
+                    <span class="name">
+                        <span ><b>initialState</b></span>
+                        <a href="#initialState"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;default&#x27;</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/shared/constants/icon-list.consts.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ICON_LIST"></a>
+                    <span class="name">
+                        <span ><b>ICON_LIST</b></span>
+                        <a href="#ICON_LIST"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+  &#x27;airplane&#x27;,
+  &#x27;american-football&#x27;,
+  &#x27;bag-handle&#x27;,
+  &#x27;balloon&#x27;,
+  &#x27;bandage&#x27;,
+  &#x27;barbell&#x27;,
+  &#x27;basket&#x27;,
+  &#x27;basketball&#x27;,
+  &#x27;bed&#x27;,
+  &#x27;beer&#x27;,
+  &#x27;bicycle&#x27;,
+  &#x27;bonfire&#x27;,
+  &#x27;book&#x27;,
+  &#x27;brush&#x27;,
+  &#x27;briefcase&#x27;,
+  &#x27;build&#x27;,
+  &#x27;bulb&#x27;,
+  &#x27;bus&#x27;,
+  &#x27;cafe&#x27;,
+  &#x27;car-sport&#x27;,
+  &#x27;car&#x27;,
+  &#x27;cart&#x27;,
+  &#x27;color-palette&#x27;,
+  &#x27;construct&#x27;,
+  &#x27;desktop&#x27;,
+  &#x27;earth&#x27;,
+  &#x27;fish&#x27;,
+  &#x27;game-controller&#x27;,
+  &#x27;football&#x27;,
+  &#x27;gift&#x27;,
+  &#x27;home&#x27;,
+  &#x27;ice-cream&#x27;,
+  &#x27;paw&#x27;,
+  &#x27;rocket&#x27;,
+  &#x27;school&#x27;,
+  &#x27;storefront&#x27;,
+  &#x27;subway&#x27;,
+  &#x27;train&#x27;,
+  &#x27;trash&#x27;,
+]</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/core/state/user/user.reducer.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="initialState"></a>
+                    <span class="name">
+                        <span ><b>initialState</b></span>
+                        <a href="#initialState"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/User.html" target="_self" >User</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>null</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="userReducer"></a>
+                    <span class="name">
+                        <span ><b>userReducer</b></span>
+                        <a href="#userReducer"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createReducer(
+  initialState,
+  on(setUserAction, (state, { user }) &#x3D;&gt; user),
+  on(resetUserAction, (state) &#x3D;&gt; ({ ...state, user: null }))
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/pages/home/categories/add-cost/add-cost.component.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="OPREATIONS"></a>
+                    <span class="name">
+                        <span ><b>OPREATIONS</b></span>
+                        <a href="#OPREATIONS"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/ArithmeticOperation.html" target="_self" >ArithmeticOperation[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+  { operation: &#x27;+&#x27; },
+  { operation: &#x27;-&#x27; },
+  { operation: &#x27;/&#x27; },
+  { operation: &#x27;x&#x27; },
+]</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/core/state/header/header.actions.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="resetModeAction"></a>
+                    <span class="name">
+                        <span ><b>resetModeAction</b></span>
+                        <a href="#resetModeAction"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(&#x27;[Home Component] Reset Mode&#x27;)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="switchModeAction"></a>
+                    <span class="name">
+                        <span ><b>switchModeAction</b></span>
+                        <a href="#switchModeAction"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(
+  &#x27;[Home Component] Switch Mode&#x27;,
+  props&lt;{ mode: string }&gt;()
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/core/state/user/user.actions.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="resetUserAction"></a>
+                    <span class="name">
+                        <span ><b>resetUserAction</b></span>
+                        <a href="#resetUserAction"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(&#x27;[Auth API] Reset User&#x27;)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setUserAction"></a>
+                    <span class="name">
+                        <span ><b>setUserAction</b></span>
+                        <a href="#setUserAction"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createAction(
+  &#x27;[Auth API] Set User&#x27;,
+  props&lt;{ user: User }&gt;()
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/core/state/date/date.selectors.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectCurrentDate"></a>
+                    <span class="name">
+                        <span ><b>selectCurrentDate</b></span>
+                        <a href="#selectCurrentDate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createSelector(
+  selectDate,
+  (state) &#x3D;&gt; state.currentDate
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectDate"></a>
+                    <span class="name">
+                        <span ><b>selectDate</b></span>
+                        <a href="#selectDate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createSelector(
+  (state: AppState) &#x3D;&gt; state.date,
+  (date: DateState) &#x3D;&gt; date
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectSelectedDate"></a>
+                    <span class="name">
+                        <span ><b>selectSelectedDate</b></span>
+                        <a href="#selectSelectedDate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createSelector(
+  selectDate,
+  (state) &#x3D;&gt; state.selectedDate
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/core/state/header/header.selectors.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectHeaderMode"></a>
+                    <span class="name">
+                        <span ><b>selectHeaderMode</b></span>
+                        <a href="#selectHeaderMode"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createSelector(
+  (state: AppState) &#x3D;&gt; state.headerMode,
+  (headerMode: string) &#x3D;&gt; headerMode
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/core/state/user/user.selectors.ts</h3>
+    <section>
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectUser"></a>
+                    <span class="name">
+                        <span ><b>selectUser</b></span>
+                        <a href="#selectUser"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createSelector(
+  (state: AppState) &#x3D;&gt; state.user,
+  (user: User) &#x3D;&gt; user
+)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectUserId"></a>
+                    <span class="name">
+                        <span ><b>selectUserId</b></span>
+                        <a href="#selectUserId"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>createSelector(selectUser, (user) &#x3D;&gt; user.id)</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'miscellaneous-variables';
+            var COMPODOC_CURRENT_PAGE_URL = 'variables.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

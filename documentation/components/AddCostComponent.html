@@ -1,0 +1,1158 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>budget-logger documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">budget-logger documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  AddCostComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/pages/home/categories/add-cost/add-cost.component.ts</code>
+</p>
+
+
+
+
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-add-cost</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./add-cost.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./add-cost.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#newCost" >newCost</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#addCost" >addCost</a>
+                            </li>
+                            <li>
+                                <a href="#addNumber" >addNumber</a>
+                            </li>
+                            <li>
+                                <a href="#addOperation" >addOperation</a>
+                            </li>
+                            <li>
+                                <a href="#addSeparator" >addSeparator</a>
+                            </li>
+                            <li>
+                                <a href="#calculate" >calculate</a>
+                            </li>
+                            <li>
+                                <a href="#delete" >delete</a>
+                            </li>
+                            <li>
+                                <a href="#isCalculated" >isCalculated</a>
+                            </li>
+                            <li>
+                                <a href="#onCancel" >onCancel</a>
+                            </li>
+                            <li>
+                                <a href="#reset" >reset</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#category" >category</a>
+                            </li>
+                            <li>
+                                <a href="#currency" >currency</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(modalCtrl: ModalController)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/pages/home/categories/add-cost/add-cost.component.ts:25</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>modalCtrl</td>
+                                                  
+                                                        <td>
+                                                                    <code>ModalController</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="category"></a>
+                        <b>category</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/Category.html" target="_self" >Category</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/pages/home/categories/add-cost/add-cost.component.ts:23</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="currency"></a>
+                        <b>currency</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/pages/home/categories/add-cost/add-cost.component.ts:24</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addCost"></a>
+                    <span class="name">
+                        <span ><b>addCost</b></span>
+                        <a href="#addCost"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>addCost()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="33"
+                            class="link-to-prism">src/app/pages/home/categories/add-cost/add-cost.component.ts:33</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addNumber"></a>
+                    <span class="name">
+                        <span ><b>addNumber</b></span>
+                        <a href="#addNumber"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>addNumber(num: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="84"
+                            class="link-to-prism">src/app/pages/home/categories/add-cost/add-cost.component.ts:84</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>num</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addOperation"></a>
+                    <span class="name">
+                        <span ><b>addOperation</b></span>
+                        <a href="#addOperation"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>addOperation(operation: <a href="../interfaces/ArithmeticOperation.html" target="_self">ArithmeticOperation</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="115"
+                            class="link-to-prism">src/app/pages/home/categories/add-cost/add-cost.component.ts:115</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>operation</td>
+                                    <td>
+                                                <code><a href="../interfaces/ArithmeticOperation.html" target="_self" >ArithmeticOperation</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addSeparator"></a>
+                    <span class="name">
+                        <span ><b>addSeparator</b></span>
+                        <a href="#addSeparator"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>addSeparator()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="104"
+                            class="link-to-prism">src/app/pages/home/categories/add-cost/add-cost.component.ts:104</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="calculate"></a>
+                    <span class="name">
+                        <span ><b>calculate</b></span>
+                        <a href="#calculate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>calculate()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="49"
+                            class="link-to-prism">src/app/pages/home/categories/add-cost/add-cost.component.ts:49</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="delete"></a>
+                    <span class="name">
+                        <span ><b>delete</b></span>
+                        <a href="#delete"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>delete()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="92"
+                            class="link-to-prism">src/app/pages/home/categories/add-cost/add-cost.component.ts:92</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isCalculated"></a>
+                    <span class="name">
+                        <span ><b>isCalculated</b></span>
+                        <a href="#isCalculated"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>isCalculated()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="127"
+                            class="link-to-prism">src/app/pages/home/categories/add-cost/add-cost.component.ts:127</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onCancel"></a>
+                    <span class="name">
+                        <span ><b>onCancel</b></span>
+                        <a href="#onCancel"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onCancel()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="29"
+                            class="link-to-prism">src/app/pages/home/categories/add-cost/add-cost.component.ts:29</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="reset"></a>
+                    <span class="name">
+                        <span ><b>reset</b></span>
+                        <a href="#reset"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>reset()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="45"
+                            class="link-to-prism">src/app/pages/home/categories/add-cost/add-cost.component.ts:45</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="newCost"></a>
+                    <span class="name">
+                        <span ><b>newCost</b></span>
+                        <a href="#newCost"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;0&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/pages/home/categories/add-cost/add-cost.component.ts:25</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, Input } from &#x27;@angular/core&#x27;;
+import { ModalController } from &#x27;@ionic/angular&#x27;;
+import { TransactionService } from &#x27;src/app/core/services/transaction/transaction.service&#x27;;
+import { Category } from &#x27;src/app/shared/models/category.model&#x27;;
+
+interface ArithmeticOperation {
+  operation: &#x27;+&#x27; | &#x27;-&#x27; | &#x27;/&#x27; | &#x27;x&#x27;;
+}
+
+const OPREATIONS: ArithmeticOperation[] &#x3D; [
+  { operation: &#x27;+&#x27; },
+  { operation: &#x27;-&#x27; },
+  { operation: &#x27;/&#x27; },
+  { operation: &#x27;x&#x27; },
+];
+
+@Component({
+  selector: &#x27;app-add-cost&#x27;,
+  templateUrl: &#x27;./add-cost.component.html&#x27;,
+  styleUrls: [&#x27;./add-cost.component.scss&#x27;],
+})
+export class AddCostComponent {
+  @Input() category: Category;
+  @Input() currency: string;
+  newCost &#x3D; &#x27;0&#x27;;
+
+  constructor(private modalCtrl: ModalController) {}
+
+  onCancel() {
+    this.modalCtrl.dismiss(null, &#x27;cancel&#x27;, &#x27;add-cost-modal&#x27;);
+  }
+
+  addCost() {
+    if (this.isCalculated()) {
+      this.modalCtrl.dismiss(
+        {
+          newCost: this.newCost,
+        },
+        &#x27;confirm&#x27;,
+        &#x27;add-cost-modal&#x27;
+      );
+    }
+  }
+
+  reset() {
+    this.newCost &#x3D; &#x27;0&#x27;;
+  }
+
+  calculate() {
+    let equationSplited &#x3D; this.newCost.split(&#x27; &#x27;);
+    for (let i &#x3D; 1; i &lt; equationSplited.length - 1; i++) {
+      switch (equationSplited[i]) {
+        case &#x27;x&#x27;:
+          equationSplited[i + 1] &#x3D; (
+            +equationSplited[i - 1] * +equationSplited[i + 1]
+          ).toString();
+          equationSplited[i - 1] &#x3D; null;
+          equationSplited[i] &#x3D; null;
+          break;
+        case &#x27;/&#x27;:
+          equationSplited[i + 1] &#x3D; (
+            +equationSplited[i - 1] / +equationSplited[i + 1]
+          ).toString();
+          equationSplited[i - 1] &#x3D; null;
+          equationSplited[i] &#x3D; null;
+          break;
+      }
+    }
+    equationSplited &#x3D; equationSplited.filter((num) &#x3D;&gt; num !&#x3D;&#x3D; null);
+    let res &#x3D; +equationSplited[0];
+    for (let i &#x3D; 1; i &lt; equationSplited.length - 1; i++) {
+      switch (equationSplited[i]) {
+        case &#x27;+&#x27;:
+          res +&#x3D; +equationSplited[i + 1];
+          break;
+        case &#x27;-&#x27;:
+          res +&#x3D; -+equationSplited[i + 1];
+          break;
+      }
+    }
+    this.newCost &#x3D; res.toString();
+  }
+
+  addNumber(num: string): void {
+    if (this.newCost &#x3D;&#x3D;&#x3D; &#x27;0&#x27;) {
+      this.newCost &#x3D; num;
+    } else {
+      this.newCost +&#x3D; num;
+    }
+  }
+
+  delete(): void {
+    if (this.newCost[this.newCost.length - 1] &#x3D;&#x3D;&#x3D; &#x27; &#x27;) {
+      this.newCost &#x3D; this.newCost.substr(0, this.newCost.length - 3);
+    } else {
+      if (this.newCost.length - 1 &lt;&#x3D; 0) {
+        this.newCost &#x3D; &#x27;0&#x27;;
+      } else {
+        this.newCost &#x3D; this.newCost.substr(0, this.newCost.length - 1);
+      }
+    }
+  }
+
+  addSeparator(): void {
+    const newCostSplit &#x3D; this.newCost.split(&#x27; &#x27;);
+    const lastNumber &#x3D; newCostSplit[newCostSplit.length - 1];
+    if (
+      this.newCost[this.newCost.length - 1] !&#x3D;&#x3D; &#x27; &#x27; &amp;&amp;
+      !lastNumber.includes(&#x27;.&#x27;)
+    ) {
+      this.newCost +&#x3D; &#x27;.&#x27;;
+    }
+  }
+
+  addOperation(operation: ArithmeticOperation) {
+    if (this.newCost !&#x3D;&#x3D; &#x27;0&#x27;) {
+      if (this.newCost[this.newCost.length - 1] &#x3D;&#x3D;&#x3D; &#x27; &#x27;) {
+        const replaceAt &#x3D; this.newCost.length - 2;
+        this.newCost &#x3D;
+          this.newCost.substr(0, replaceAt) + operation.operation + &#x27; &#x27;;
+      } else {
+        this.newCost +&#x3D; &#x27; &#x27; + operation.operation + &#x27; &#x27;;
+      }
+    }
+  }
+
+  isCalculated(): boolean {
+    return !OPREATIONS.find((opp) &#x3D;&gt; this.newCost.includes(opp.operation));
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;ion-header&gt;
+  &lt;ion-toolbar class&#x3D;&quot;ion-text-center&quot;&gt;
+    &lt;ion-title&gt;{{ category.name }}&lt;/ion-title&gt;
+    &lt;ion-buttons slot&#x3D;&quot;primary&quot;&gt;
+      &lt;ion-button (click)&#x3D;&quot;onCancel()&quot;&gt;
+        &lt;ion-icon name&#x3D;&quot;close&quot;&gt;&lt;/ion-icon&gt;
+      &lt;/ion-button&gt;
+    &lt;/ion-buttons&gt;
+    &lt;ion-buttons slot&#x3D;&quot;start&quot;&gt;
+      &lt;ion-button&gt;
+        &lt;ion-icon slot&#x3D;&quot;start&quot; name&#x3D;&quot;wallet&quot;&gt;&lt;/ion-icon&gt;
+      &lt;/ion-button&gt;
+    &lt;/ion-buttons&gt;
+  &lt;/ion-toolbar&gt;
+&lt;/ion-header&gt;
+
+&lt;ion-content&gt;
+  &lt;div class&#x3D;&quot;container&quot;&gt;
+    &lt;div [style.background-color]&#x3D;&quot;category.color&quot; class&#x3D;&quot;header title&quot;&gt;
+      &lt;ion-icon [name]&#x3D;&quot;category.iconName&quot;&gt;&lt;/ion-icon&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;header amount&quot;&gt;{{ newCost }}{{ &quot; &quot; + currency }}&lt;/div&gt;
+    &lt;div class&#x3D;&quot;grid divide&quot; (click)&#x3D;&quot;addOperation({ operation: &#x27;/&#x27; })&quot;&gt;/&lt;/div&gt;
+    &lt;div class&#x3D;&quot;grid multiplication&quot; (click)&#x3D;&quot;addOperation({ operation: &#x27;x&#x27; })&quot;&gt;
+      x
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;grid subtraction&quot; (click)&#x3D;&quot;addOperation({ operation: &#x27;-&#x27; })&quot;&gt;
+      -
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;grid add&quot; (click)&#x3D;&quot;addOperation({ operation: &#x27;+&#x27; })&quot;&gt;+&lt;/div&gt;
+    &lt;div class&#x3D;&quot;grid currency&quot;&gt;{{ currency }}&lt;/div&gt;
+    &lt;div class&#x3D;&quot;grid button-7&quot; (click)&#x3D;&quot;addNumber(&#x27;7&#x27;)&quot;&gt;7&lt;/div&gt;
+    &lt;div class&#x3D;&quot;grid button-8&quot; (click)&#x3D;&quot;addNumber(&#x27;8&#x27;)&quot;&gt;8&lt;/div&gt;
+    &lt;div class&#x3D;&quot;grid button-9&quot; (click)&#x3D;&quot;addNumber(&#x27;9&#x27;)&quot;&gt;9&lt;/div&gt;
+    &lt;div class&#x3D;&quot;grid button-4&quot; (click)&#x3D;&quot;addNumber(&#x27;4&#x27;)&quot;&gt;4&lt;/div&gt;
+    &lt;div class&#x3D;&quot;grid button-5&quot; (click)&#x3D;&quot;addNumber(&#x27;5&#x27;)&quot;&gt;5&lt;/div&gt;
+    &lt;div class&#x3D;&quot;grid button-6&quot; (click)&#x3D;&quot;addNumber(&#x27;6&#x27;)&quot;&gt;6&lt;/div&gt;
+    &lt;div class&#x3D;&quot;grid clear&quot; (click)&#x3D;&quot;reset()&quot;&gt;CE&lt;/div&gt;
+    &lt;div class&#x3D;&quot;grid button-1&quot; (click)&#x3D;&quot;addNumber(&#x27;1&#x27;)&quot;&gt;1&lt;/div&gt;
+    &lt;div class&#x3D;&quot;grid button-2&quot; (click)&#x3D;&quot;addNumber(&#x27;2&#x27;)&quot;&gt;2&lt;/div&gt;
+    &lt;div class&#x3D;&quot;grid button-3&quot; (click)&#x3D;&quot;addNumber(&#x27;3&#x27;)&quot;&gt;3&lt;/div&gt;
+    &lt;div class&#x3D;&quot;grid button-0&quot; (click)&#x3D;&quot;addNumber(&#x27;0&#x27;)&quot;&gt;0&lt;/div&gt;
+    &lt;div class&#x3D;&quot;grid submit&quot; (click)&#x3D;&quot;addCost()&quot; *ngIf&#x3D;&quot;isCalculated()&quot;&gt;
+      &lt;ion-icon name&#x3D;&quot;checkmark&quot;&gt;&lt;/ion-icon&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;grid submit&quot; (click)&#x3D;&quot;calculate()&quot; *ngIf&#x3D;&quot;!isCalculated()&quot;&gt;
+      &lt;ion-icon name&#x3D;&quot;reorder-two&quot;&gt;&lt;/ion-icon&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;grid separator&quot; (click)&#x3D;&quot;addSeparator()&quot;&gt;,&lt;/div&gt;
+    &lt;div class&#x3D;&quot;grid back&quot; (click)&#x3D;&quot;delete()&quot;&gt;
+      &lt;ion-icon name&#x3D;&quot;backspace&quot;&gt;&lt;/ion-icon&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/ion-content&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./add-cost.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">ion-grid {
+  height: 100%;
+}
+
+.input {
+  height: 100%;
+}
+
+.container {
+  display: grid;
+  height: 100%;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 0.25rem 0.25rem;
+  grid-template-areas:
+    &quot;title title title title title&quot;
+    &quot;amount amount amount amount amount&quot;
+    &quot;divide button-7 button-8 button-9 back&quot;
+    &quot;multiplication button-4 button-5 button-6 clear&quot;
+    &quot;subtraction button-1 button-2 button-3 submit&quot;
+    &quot;add currency button-0 separator submit&quot;;
+  justify-content: stretch;
+  justify-items: stretch;
+  align-items: stretch;
+  font-size: 2.5rem;
+}
+
+.header {
+  overflow: hidden;
+  word-break: break-all;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid {
+  overflow: hidden;
+  word-break: break-all;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: lightsteelblue;
+  transition: background-color 1s;
+
+  &amp;:active {
+    background-color: magenta;
+  }
+}
+.divide {
+  grid-area: divide;
+}
+.multiplication {
+  grid-area: multiplication;
+}
+.subtraction {
+  grid-area: subtraction;
+}
+.add {
+  grid-area: add;
+}
+.button-7 {
+  grid-area: button-7;
+}
+.button-8 {
+  grid-area: button-8;
+}
+.button-9 {
+  grid-area: button-9;
+}
+.button-4 {
+  grid-area: button-4;
+}
+.button-5 {
+  grid-area: button-5;
+}
+.button-6 {
+  grid-area: button-6;
+}
+.button-1 {
+  grid-area: button-1;
+}
+.button-2 {
+  grid-area: button-2;
+}
+.button-3 {
+  grid-area: button-3;
+}
+.button-0 {
+  grid-area: button-0;
+}
+.submit {
+  grid-area: submit;
+}
+.separator {
+  grid-area: separator;
+}
+.back {
+  grid-area: back;
+}
+.clear {
+  grid-area: clear;
+}
+.currency {
+  grid-area: currency;
+}
+.amount {
+  color: red;
+  grid-area: amount;
+}
+.title {
+  background-color: #3ae96f;
+  grid-area: title;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><ion-header>  <ion-toolbar class="ion-text-center">    <ion-title>{{ category.name }}</ion-title>    <ion-buttons slot="primary">      <ion-button (click)="onCancel()">        <ion-icon name="close"></ion-icon>      </ion-button>    </ion-buttons>    <ion-buttons slot="start">      <ion-button>        <ion-icon slot="start" name="wallet"></ion-icon>      </ion-button>    </ion-buttons>  </ion-toolbar></ion-header><ion-content>  <div class="container">    <div [style.background-color]="category.color" class="header title">      <ion-icon [name]="category.iconName"></ion-icon>    </div>    <div class="header amount">{{ newCost }}{{ " " + currency }}</div>    <div class="grid divide" (click)="addOperation({ operation: \'/\' })">/</div>    <div class="grid multiplication" (click)="addOperation({ operation: \'x\' })">      x    </div>    <div class="grid subtraction" (click)="addOperation({ operation: \'-\' })">      -    </div>    <div class="grid add" (click)="addOperation({ operation: \'+\' })">+</div>    <div class="grid currency">{{ currency }}</div>    <div class="grid button-7" (click)="addNumber(\'7\')">7</div>    <div class="grid button-8" (click)="addNumber(\'8\')">8</div>    <div class="grid button-9" (click)="addNumber(\'9\')">9</div>    <div class="grid button-4" (click)="addNumber(\'4\')">4</div>    <div class="grid button-5" (click)="addNumber(\'5\')">5</div>    <div class="grid button-6" (click)="addNumber(\'6\')">6</div>    <div class="grid clear" (click)="reset()">CE</div>    <div class="grid button-1" (click)="addNumber(\'1\')">1</div>    <div class="grid button-2" (click)="addNumber(\'2\')">2</div>    <div class="grid button-3" (click)="addNumber(\'3\')">3</div>    <div class="grid button-0" (click)="addNumber(\'0\')">0</div>    <div class="grid submit" (click)="addCost()" *ngIf="isCalculated()">      <ion-icon name="checkmark"></ion-icon>    </div>    <div class="grid submit" (click)="calculate()" *ngIf="!isCalculated()">      <ion-icon name="reorder-two"></ion-icon>    </div>    <div class="grid separator" (click)="addSeparator()">,</div>    <div class="grid back" (click)="delete()">      <ion-icon name="backspace"></ion-icon>    </div>  </div></ion-content></div>'
+    var COMPONENTS = [{'name': 'AddCategoryComponent', 'selector': 'app-add-category'},{'name': 'AddCostComponent', 'selector': 'app-add-cost'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CategoriesPage', 'selector': 'app-categories'},{'name': 'CategoryComponent', 'selector': 'app-category'},{'name': 'ColorListComponent', 'selector': 'app-color-list'},{'name': 'EditCategoryComponent', 'selector': 'app-edit-category'},{'name': 'HomePage', 'selector': 'app-home'},{'name': 'IconCreatorComponent', 'selector': 'app-icon-createor'},{'name': 'IconListComponent', 'selector': 'app-icon-list'},{'name': 'LoadingSpinnerComponent', 'selector': 'app-loading-spinner'},{'name': 'LoginPage', 'selector': 'app-login'},{'name': 'OverviewPage', 'selector': 'app-overview'},{'name': 'SetMounthlyGoalComponent', 'selector': 'app-set-mounthly-goal'},{'name': 'SignupPage', 'selector': 'app-signup'},{'name': 'TransactionComponent', 'selector': 'app-transaction'},{'name': 'TransactionsPage', 'selector': 'app-transactions'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'AddCostComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'AddCostComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

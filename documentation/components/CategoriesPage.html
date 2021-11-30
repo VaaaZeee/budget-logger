@@ -1,0 +1,1171 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>budget-logger documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">budget-logger documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  CategoriesPage</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/pages/home/categories/categories.page.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-categories</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./categories.page.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./categories.page.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#categoryService" >categoryService</a>
+                            </li>
+                            <li>
+                                <a href="#date$" >date$</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#goalService" >goalService</a>
+                            </li>
+                            <li>
+                                <a href="#isEditMode" >isEditMode</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#getPercentage" >getPercentage</a>
+                            </li>
+                            <li>
+                                <a href="#ionViewWillEnter" >ionViewWillEnter</a>
+                            </li>
+                            <li>
+                                <a href="#nextMounth" >nextMounth</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onOpenMenu" >onOpenMenu</a>
+                            </li>
+                            <li>
+                                <a href="#openSetGoalMoadl" >openSetGoalMoadl</a>
+                            </li>
+                            <li>
+                                <a href="#previousMounth" >previousMounth</a>
+                            </li>
+                            <li>
+                                <a href="#switchToEdit" >switchToEdit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(categoryService: <a href="../injectables/CategoryService.html" target="_self">CategoryService</a>, menuCtrl: MenuController, store: Store, modalCtrl: ModalController, goalService: <a href="../injectables/GoalService.html" target="_self">GoalService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/pages/home/categories/categories.page.ts:30</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>categoryService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/CategoryService.html" target="_self" >CategoryService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>menuCtrl</td>
+                                                  
+                                                        <td>
+                                                                    <code>MenuController</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>store</td>
+                                                  
+                                                        <td>
+                                                                    <code>Store</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>modalCtrl</td>
+                                                  
+                                                        <td>
+                                                                    <code>ModalController</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>goalService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/GoalService.html" target="_self" >GoalService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getPercentage"></a>
+                    <span class="name">
+                        <span ><b>getPercentage</b></span>
+                        <a href="#getPercentage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getPercentage(categories: <a href="../classes/Category.html" target="_self">Category[]</a>, goal: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="70"
+                            class="link-to-prism">src/app/pages/home/categories/categories.page.ts:70</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>categories</td>
+                                    <td>
+                                                <code><a href="../classes/Category.html" target="_self" >Category[]</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>goal</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ionViewWillEnter"></a>
+                    <span class="name">
+                        <span ><b>ionViewWillEnter</b></span>
+                        <a href="#ionViewWillEnter"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ionViewWillEnter()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="42"
+                            class="link-to-prism">src/app/pages/home/categories/categories.page.ts:42</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="nextMounth"></a>
+                    <span class="name">
+                        <span ><b>nextMounth</b></span>
+                        <a href="#nextMounth"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>nextMounth()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="62"
+                            class="link-to-prism">src/app/pages/home/categories/categories.page.ts:62</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="47"
+                            class="link-to-prism">src/app/pages/home/categories/categories.page.ts:47</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onOpenMenu"></a>
+                    <span class="name">
+                        <span ><b>onOpenMenu</b></span>
+                        <a href="#onOpenMenu"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onOpenMenu()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="58"
+                            class="link-to-prism">src/app/pages/home/categories/categories.page.ts:58</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="openSetGoalMoadl"></a>
+                    <span class="name">
+                        <span ><b>openSetGoalMoadl</b></span>
+                        <a href="#openSetGoalMoadl"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>openSetGoalMoadl()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="79"
+                            class="link-to-prism">src/app/pages/home/categories/categories.page.ts:79</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="previousMounth"></a>
+                    <span class="name">
+                        <span ><b>previousMounth</b></span>
+                        <a href="#previousMounth"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>previousMounth()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="66"
+                            class="link-to-prism">src/app/pages/home/categories/categories.page.ts:66</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="switchToEdit"></a>
+                    <span class="name">
+                        <span ><b>switchToEdit</b></span>
+                        <a href="#switchToEdit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>switchToEdit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="49"
+                            class="link-to-prism">src/app/pages/home/categories/categories.page.ts:49</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="categoryService"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>categoryService</b></span>
+                        <a href="#categoryService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../injectables/CategoryService.html" target="_self" >CategoryService</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/pages/home/categories/categories.page.ts:33</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="date$"></a>
+                    <span class="name">
+                        <span ><b>date$</b></span>
+                        <a href="#date$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/DateState.html" target="_self" >Observable&lt;DateState&gt;</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/pages/home/categories/categories.page.ts:29</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="goalService"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>goalService</b></span>
+                        <a href="#goalService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../injectables/GoalService.html" target="_self" >GoalService</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/pages/home/categories/categories.page.ts:37</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isEditMode"></a>
+                    <span class="name">
+                        <span ><b>isEditMode</b></span>
+                        <a href="#isEditMode"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/pages/home/categories/categories.page.ts:30</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { FormControl, FormGroup, Validators } from &#x27;@angular/forms&#x27;;
+import { MenuController, ModalController } from &#x27;@ionic/angular&#x27;;
+import { select, Store } from &#x27;@ngrx/store&#x27;;
+import { combineLatest, Observable } from &#x27;rxjs&#x27;;
+import { map, switchMap, take } from &#x27;rxjs/operators&#x27;;
+import { CategoryService } from &#x27;src/app/core/services/category/category.service&#x27;;
+import { GoalService } from &#x27;src/app/core/services/goal/goal.service&#x27;;
+import { TransactionService } from &#x27;src/app/core/services/transaction/transaction.service&#x27;;
+import { DateState } from &#x27;src/app/core/state/app.state&#x27;;
+import {
+  decrementDateAction,
+  incrementDateAction,
+} from &#x27;src/app/core/state/date/date.actions&#x27;;
+import { selectDate } from &#x27;src/app/core/state/date/date.selectors&#x27;;
+import {
+  resetModeAction,
+  switchModeAction,
+} from &#x27;src/app/core/state/header/header.actions&#x27;;
+import { Category } from &#x27;src/app/shared/models/category.model&#x27;;
+import { SetMounthlyGoalComponent } from &#x27;./set-mounthly-goal/set-mounthly-goal.component&#x27;;
+
+@Component({
+  selector: &#x27;app-categories&#x27;,
+  templateUrl: &#x27;./categories.page.html&#x27;,
+  styleUrls: [&#x27;./categories.page.scss&#x27;],
+})
+export class CategoriesPage implements OnInit {
+  date$: Observable&lt;DateState&gt;;
+  isEditMode: boolean;
+
+  constructor(
+    public categoryService: CategoryService,
+    private menuCtrl: MenuController,
+    private store: Store,
+    private modalCtrl: ModalController,
+    public goalService: GoalService
+  ) {
+    this.date$ &#x3D; this.store.pipe(select(selectDate));
+  }
+
+  ionViewWillEnter() {
+    this.goalService.fetchGoal().pipe(take(1)).subscribe();
+    this.categoryService.fetchListedCategories().pipe(take(1)).subscribe();
+  }
+
+  ngOnInit() {}
+
+  switchToEdit() {
+    this.isEditMode &#x3D; !this.isEditMode;
+    if (this.isEditMode) {
+      this.store.dispatch(switchModeAction({ mode: &#x27;edit&#x27; }));
+    } else {
+      this.store.dispatch(resetModeAction());
+    }
+  }
+
+  onOpenMenu() {
+    this.menuCtrl.toggle(&#x27;main&#x27;);
+  }
+
+  nextMounth() {
+    this.store.dispatch(incrementDateAction());
+  }
+
+  previousMounth() {
+    this.store.dispatch(decrementDateAction());
+  }
+
+  getPercentage(categories: Category[], goal: number) {
+    let sum &#x3D; 0;
+    categories.forEach((category) &#x3D;&gt; {
+      sum +&#x3D; category.spent;
+    });
+
+    return Math.round((sum / goal) * 100);
+  }
+
+  openSetGoalMoadl() {
+    this.modalCtrl
+      .create({
+        component: SetMounthlyGoalComponent,
+        cssClass: &#x27;set-goal-modal&#x27;,
+        id: &#x27;set-goal-modal&#x27;,
+      })
+      .then((modalEl) &#x3D;&gt; {
+        modalEl.present();
+        return modalEl.onDidDismiss();
+      })
+      .then(async (resData) &#x3D;&gt; {
+        if (resData.role &#x3D;&#x3D;&#x3D; &#x27;confirm&#x27; &amp;&amp; (resData.data || resData.data.goal)) {
+          await this.goalService.addGoalToFireBase(resData.data.goal);
+        }
+      });
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;ng-container *ngIf&#x3D;&quot;date$ | async as date&quot;&gt;
+  &lt;ng-container *ngIf&#x3D;&quot;goalService.displayedGoal$ | async as goal&quot;&gt;
+    &lt;ion-header&gt;
+      &lt;ion-toolbar
+        [color]&#x3D;&quot;(date.currentDate | isEqualDates : date.selectedDate) ? &#x27;primary&#x27; : &#x27;light&#x27;&quot;
+        class&#x3D;&quot;ion-text-center&quot;
+      &gt;
+        &lt;ion-grid&gt;
+          &lt;ion-row&gt;
+            &lt;ion-col&gt;
+              &lt;ion-icon
+                class&#x3D;&quot;menu&quot;
+                *ngIf&#x3D;&quot;!isEditMode&quot;
+                name&#x3D;&quot;menu&quot;
+                (click)&#x3D;&quot;onOpenMenu()&quot;
+              &gt;&lt;/ion-icon&gt;
+              &lt;ion-icon
+                *ngIf&#x3D;&quot;isEditMode&quot;
+                (click)&#x3D;&quot;switchToEdit()&quot;
+                name&#x3D;&quot;arrow-back&quot;
+              &gt;&lt;/ion-icon&gt;
+            &lt;/ion-col&gt;
+            &lt;ion-col size&#x3D;&quot;9&quot;&gt;
+              &lt;ion-title&gt;
+                {{isEditMode ? &#x27;Kategóriák szerkesztése&#x27; : &#x27;Budget Logger&#x27;}}
+              &lt;/ion-title&gt;
+            &lt;/ion-col&gt;
+            &lt;ion-col&gt;
+              &lt;ion-icon (click)&#x3D;&quot;switchToEdit()&quot; name&#x3D;&quot;pencil&quot;&gt;&lt;/ion-icon&gt;
+            &lt;/ion-col&gt;
+          &lt;/ion-row&gt;
+          &lt;ion-row class&#x3D;&quot;date&quot;&gt;
+            &lt;ion-col&gt;
+              &lt;ion-icon
+                (click)&#x3D;&quot;previousMounth()&quot;
+                name&#x3D;&quot;chevron-back&quot;
+              &gt;&lt;/ion-icon&gt;
+            &lt;/ion-col&gt;
+            &lt;ion-col size&#x3D;&quot;9&quot;&gt;
+              &lt;ion-text&gt;
+                &lt;span&gt;{{ date.selectedDate | date:&#x27;yyyy LLLL &#x27; }}&lt;/span&gt;
+                &lt;span
+                  [style.color]&#x3D;&quot;(date.currentDate | isEqualDates : date.selectedDate) ? &#x27;#0ea70e&#x27; : &#x27;#222428&#x27;&quot;
+                  class&#x3D;&quot;day&quot;
+                  &gt;{{ date.selectedDate | date:&#x27;dd&#x27;}}&lt;/span
+                &gt;
+              &lt;/ion-text&gt;
+            &lt;/ion-col&gt;
+            &lt;ion-col&gt;
+              &lt;ion-icon
+                (click)&#x3D;&quot;nextMounth()&quot;
+                name&#x3D;&quot;chevron-forward&quot;
+              &gt;&lt;/ion-icon&gt;
+            &lt;/ion-col&gt;
+          &lt;/ion-row&gt;
+        &lt;/ion-grid&gt;
+      &lt;/ion-toolbar&gt;
+    &lt;/ion-header&gt;
+
+    &lt;ion-content class&#x3D;&quot;ion-text-center&quot;&gt;
+      &lt;ng-container
+        *ngIf&#x3D;&quot;categoryService.listedCategories$ | async as categories; else loading&quot;
+      &gt;
+        &lt;div class&#x3D;&quot;container&quot;&gt;
+          &lt;ng-container *ngFor&#x3D;&quot;let category of categories&quot;&gt;
+            &lt;div class&#x3D;&quot;grid&quot;&gt;
+              &lt;app-category
+                [disabled]&#x3D;&quot;!(date.currentDate | isEqualDates : date.selectedDate)&quot;
+                [category]&#x3D;&quot;category&quot;
+                [isEditMode]&#x3D;&quot;isEditMode&quot;
+              &gt;&lt;/app-category&gt;
+            &lt;/div&gt;
+          &lt;/ng-container&gt;
+          &lt;ng-container *ngIf&#x3D;&quot;categories.length &lt; 12&quot;&gt;
+            &lt;div class&#x3D;&quot;grid item-{{categories.length + 1}}&quot;&gt;
+              &lt;app-category
+                [slot]&#x3D;&quot;(&#x27;item-&#x27; + (categories.length + 1) | castToGridSlot)&quot;
+              &gt;
+              &lt;/app-category&gt;
+            &lt;/div&gt;
+          &lt;/ng-container&gt;
+          &lt;div class&#x3D;&quot;grid item-big&quot;&gt;
+            &lt;div class&#x3D;&quot;item center&quot;&gt;
+              &lt;circle-progress
+                (click)&#x3D;&quot; date.currentDate &lt;&#x3D; date.selectedDate ? openSetGoalMoadl() : &#x27;&#x27;&quot;
+                [percent]&#x3D;&quot;goal &lt; 0 ? 100 : getPercentage(categories, goal)&quot;
+                [title]&#x3D;&quot;&#x27;Cél&#x27;&quot;
+                [outerStrokeColor]&#x3D;&quot;(getPercentage(categories, goal) &gt;&#x3D; 100) ? &#x27;#ff4961&#x27; : &#x27;#03ce36&#x27;&quot;
+                [innerStrokeColor]&#x3D;&quot;(getPercentage(categories, goal) &gt;&#x3D; 100) ? &#x27;#ff4961&#x27; : &#x27;#e7e8ea&#x27;&quot;
+                [outerStrokeGradientStopColor]&#x3D;&quot;(getPercentage(categories, goal) &gt;&#x3D; 100) ? &#x27;#ff4961&#x27; : &#x27;#6cff0a&#x27;&quot;
+                [subtitle]&#x3D;&quot;goal &lt; 0 ? &#x27;Még nincs&#x27; :  (goal | currency: &#x27; Ft&#x27;:&#x27;symbol&#x27;:&#x27;1.0-0&#x27;)&quot;
+              &gt;&lt;/circle-progress&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/ng-container&gt;
+      &lt;ng-template #loading
+        &gt;&lt;ion-spinner color&#x3D;&quot;primary&quot;&gt;&lt;/ion-spinner
+      &gt;&lt;/ng-template&gt;
+    &lt;/ion-content&gt;
+  &lt;/ng-container&gt;
+&lt;/ng-container&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./categories.page.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.container {
+  display: grid;
+  position: absolute;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    &quot;item-1 item-2 item-3 item-4&quot;
+    &quot;item-5 item-big item-big item-6&quot;
+    &quot;item-7 item-big item-big item-8&quot;
+    &quot;item-9 item-10 item-11 item-12&quot;;
+  justify-content: stretch;
+  justify-items: stretch;
+  align-items: stretch;
+  grid-gap: 0.25rem;
+  height: 100%;
+  padding: 1.5rem 0 1.5rem 0;
+  margin: 0;
+
+  .grid {
+    overflow: hidden;
+    word-break: break-all;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .center {
+      ion-icon {
+        font-size: 5rem;
+      }
+    }
+  }
+
+  .item-1 {
+    grid-area: item-1;
+  }
+  .item-2 {
+    grid-area: item-2;
+  }
+  .item-3 {
+    grid-area: item-3;
+  }
+  .item-4 {
+    grid-area: item-4;
+  }
+  .item-5 {
+    grid-area: item-5;
+  }
+  .item-6 {
+    grid-area: item-6;
+  }
+  .item-7 {
+    grid-area: item-7;
+  }
+  .item-8 {
+    grid-area: item-8;
+  }
+  .item-9 {
+    grid-area: item-9;
+  }
+  .item-10 {
+    grid-area: item-10;
+  }
+  .item-11 {
+    grid-area: item-11;
+  }
+  .item-12 {
+    grid-area: item-12;
+  }
+  .item-big {
+    grid-area: item-big;
+  }
+}
+
+.day {
+  background-color: var(--ion-color-primary-contrast);
+  color: transparent;
+  padding: 2px;
+  border-radius: 4px;
+}
+
+.date {
+  ion-icon {
+    font-size: 1.2rem;
+  }
+}
+
+ion-toolbar {
+  font-weight: bold;
+  align-self: center;
+  ion-icon {
+    font-size: 1.5rem;
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><ng-container *ngIf="date$ | async as date">  <ng-container *ngIf="goalService.displayedGoal$ | async as goal">    <ion-header>      <ion-toolbar        [color]="(date.currentDate | isEqualDates : date.selectedDate) ? \'primary\' : \'light\'"        class="ion-text-center"      >        <ion-grid>          <ion-row>            <ion-col>              <ion-icon                class="menu"                *ngIf="!isEditMode"                name="menu"                (click)="onOpenMenu()"              ></ion-icon>              <ion-icon                *ngIf="isEditMode"                (click)="switchToEdit()"                name="arrow-back"              ></ion-icon>            </ion-col>            <ion-col size="9">              <ion-title>                {{isEditMode ? \'Kategóriák szerkesztése\' : \'Budget Logger\'}}              </ion-title>            </ion-col>            <ion-col>              <ion-icon (click)="switchToEdit()" name="pencil"></ion-icon>            </ion-col>          </ion-row>          <ion-row class="date">            <ion-col>              <ion-icon                (click)="previousMounth()"                name="chevron-back"              ></ion-icon>            </ion-col>            <ion-col size="9">              <ion-text>                <span>{{ date.selectedDate | date:\'yyyy LLLL \' }}</span>                <span                  [style.color]="(date.currentDate | isEqualDates : date.selectedDate) ? \'#0ea70e\' : \'#222428\'"                  class="day"                  >{{ date.selectedDate | date:\'dd\'}}</span                >              </ion-text>            </ion-col>            <ion-col>              <ion-icon                (click)="nextMounth()"                name="chevron-forward"              ></ion-icon>            </ion-col>          </ion-row>        </ion-grid>      </ion-toolbar>    </ion-header>    <ion-content class="ion-text-center">      <ng-container        *ngIf="categoryService.listedCategories$ | async as categories; else loading"      >        <div class="container">          <ng-container *ngFor="let category of categories">            <div class="grid">              <app-category                [disabled]="!(date.currentDate | isEqualDates : date.selectedDate)"                [category]="category"                [isEditMode]="isEditMode"              ></app-category>            </div>          </ng-container>          <ng-container *ngIf="categories.length < 12">            <div class="grid item-{{categories.length + 1}}">              <app-category                [slot]="(\'item-\' + (categories.length + 1) | castToGridSlot)"              >              </app-category>            </div>          </ng-container>          <div class="grid item-big">            <div class="item center">              <circle-progress                (click)=" date.currentDate <= date.selectedDate ? openSetGoalMoadl() : \'\'"                [percent]="goal < 0 ? 100 : getPercentage(categories, goal)"                [title]="\'Cél\'"                [outerStrokeColor]="(getPercentage(categories, goal) >= 100) ? \'#ff4961\' : \'#03ce36\'"                [innerStrokeColor]="(getPercentage(categories, goal) >= 100) ? \'#ff4961\' : \'#e7e8ea\'"                [outerStrokeGradientStopColor]="(getPercentage(categories, goal) >= 100) ? \'#ff4961\' : \'#6cff0a\'"                [subtitle]="goal < 0 ? \'Még nincs\' :  (goal | currency: \' Ft\':\'symbol\':\'1.0-0\')"              ></circle-progress>            </div>          </div>        </div>      </ng-container>      <ng-template #loading        ><ion-spinner color="primary"></ion-spinner      ></ng-template>    </ion-content>  </ng-container></ng-container></div>'
+    var COMPONENTS = [{'name': 'AddCategoryComponent', 'selector': 'app-add-category'},{'name': 'AddCostComponent', 'selector': 'app-add-cost'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CategoriesPage', 'selector': 'app-categories'},{'name': 'CategoryComponent', 'selector': 'app-category'},{'name': 'ColorListComponent', 'selector': 'app-color-list'},{'name': 'EditCategoryComponent', 'selector': 'app-edit-category'},{'name': 'HomePage', 'selector': 'app-home'},{'name': 'IconCreatorComponent', 'selector': 'app-icon-createor'},{'name': 'IconListComponent', 'selector': 'app-icon-list'},{'name': 'LoadingSpinnerComponent', 'selector': 'app-loading-spinner'},{'name': 'LoginPage', 'selector': 'app-login'},{'name': 'OverviewPage', 'selector': 'app-overview'},{'name': 'SetMounthlyGoalComponent', 'selector': 'app-set-mounthly-goal'},{'name': 'SignupPage', 'selector': 'app-signup'},{'name': 'TransactionComponent', 'selector': 'app-transaction'},{'name': 'TransactionsPage', 'selector': 'app-transactions'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'CategoriesPage'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'CategoriesPage.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

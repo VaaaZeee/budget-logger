@@ -2,6 +2,10 @@ ion-grid {
   height: 100%;
 }
 
+ion-icon {
+  color: white;
+}
+
 .input {
   height: 100%;
 }
@@ -40,6 +44,7 @@ ion-grid {
   align-items: center;
   justify-content: center;
   background-color: lightsteelblue;
+  color: white;
   transition: background-color 1s;
 
   &:active {

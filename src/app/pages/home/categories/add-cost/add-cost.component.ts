@@ -41,6 +41,7 @@ export class AddCostComponent {
       );
     }
   }
+  //round
 
   reset() {
     this.newCost = '0';
@@ -78,6 +79,10 @@ export class AddCostComponent {
           break;
       }
     }
+    if (res === Infinity || res === -Infinity) {
+      res = 0;
+    }
+    res = Math.round(res * 100) / 100;
     this.newCost = res.toString();
   }
 

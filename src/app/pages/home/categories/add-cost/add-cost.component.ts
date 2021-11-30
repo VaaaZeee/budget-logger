@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-import { TransactionService } from 'src/app/core/services/transaction/transaction.service';
 import { Category } from 'src/app/shared/models/category.model';
 
 interface ArithmeticOperation {
@@ -31,7 +30,7 @@ export class AddCostComponent {
   }
 
   addCost() {
-    if (this.isCalculated()) {
+    if (this.isCalculated() && this.newCost !== '0') {
       this.modalCtrl.dismiss(
         {
           newCost: this.newCost,
@@ -41,7 +40,6 @@ export class AddCostComponent {
       );
     }
   }
-  //round
 
   reset() {
     this.newCost = '0';
